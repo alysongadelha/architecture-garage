@@ -1,11 +1,5 @@
-import Image from "next/image";
+import MockText from "@/components/MockText";
 
 export default function Home() {
-  return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24 bg-orange-200">
-      <h1 className="font-heading text-primaryColor text-2xl">
-        INITIAL PROJECT
-      </h1>
-    </main>
-  );
+  return <MockText page={"INITIAL PROJECT"} />;
 }

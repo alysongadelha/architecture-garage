@@ -13,7 +13,7 @@ module.exports = {
           "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
       },
       fontFamily: {
-        body: "var(--font-open-sans)",
+        body: "var(--font-arimo)",
         heading: "var(--font-montserrat)",
         accent: "var(--font-playfair-display)",
       },
@@ -21,6 +21,17 @@ module.exports = {
         primaryColor: "#2A3B4F",
         secondaryColor: "#C9D7E1",
         accentColor: "#FF6F00",
+        whiteColor: {
+          header: "#F7F7F7",
+        },
+        orangeColor: {
+          logo: "",
+        },
+        logoColor: {
+          grayAG: "#363432",
+          blackAG: "#212322",
+          orangeAG: "#ED9B33",
+        },
       },
     },
   },

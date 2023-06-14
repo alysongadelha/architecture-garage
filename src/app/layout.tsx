@@ -1,5 +1,9 @@
+import Header from "@/components/header/Header";
+import Image from "next/image";
 import "./globals.css";
+import bgImagem from "@/assets/Logo_AG_BG.svg";
 import {
+  Arimo,
   Inter,
   Montserrat,
   Open_Sans,
@@ -10,13 +14,26 @@ const montSerrat = Montserrat({
   subsets: ["latin"],
   variable: "--font-montserrat",
 });
+
 const openSans = Open_Sans({
   subsets: ["latin"],
   variable: "--font-open-sans",
 });
+
 const playfairDisplay = Playfair_Display({
   subsets: ["latin"],
   variable: "--font-playfair-display",
+});
+
+const arimo = Arimo({
+  subsets: ["latin"],
+  variable: "--font-arimo",
+});
+
+const arimoBold = Arimo({
+  subsets: ["latin"],
+  variable: "--font-arimo",
+  weight: "700",
 });
 
 const inter = Inter({ subsets: ["latin"] });
@@ -34,18 +51,16 @@ export default function RootLayout({
   return (
     <html lang="pt-br">
       <body
-        className={`${openSans.variable} ${montSerrat.variable} ${playfairDisplay.variable}`}
+        className={`${arimo.variable}  ${openSans.variable} ${montSerrat.variable} ${playfairDisplay.variable} grid grid-cols-12 gap-4 font-body text-logoColor-blackAG`}
       >
-        <header>
-          <h1>HEADER</h1>
-        </header>
-        <nav>
-          <h1>NAVIGATION</h1>
-        </nav>
+        <Header />
 
-        {children}
-        <footer>
-          <h1>FOOTER</h1>
+        <div className="z-10 col-span-10 col-start-2 overflow-hidden rounded-md">
+          {children}
+        </div>
+
+        <footer className="z-10 col-span-12 bg-whiteColor-header">
+          <h1 className="text-gray-700">FOOTER</h1>
         </footer>
       </body>
     </html>
