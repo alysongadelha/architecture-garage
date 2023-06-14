@@ -1,4 +1,5 @@
 "use client";
+import MockText from "@/components/MockText";
 import { NextPage } from "next";
 
 interface Props {
@@ -10,11 +11,7 @@ interface Props {
 const ProjectDetailsPage: NextPage<Props> = ({ params }) => {
   const { projectKey } = params;
 
-  return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24 bg-orange-200">
-      <h1 className="font-heading text-primaryColor text-2xl">{projectKey}</h1>
-    </main>
-  );
+  return <MockText page={`PRODUCT DETAILS WITH CODE: ${projectKey}`} />;
 };
 
 export default ProjectDetailsPage;
