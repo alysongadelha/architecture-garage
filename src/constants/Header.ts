@@ -1,4 +1,4 @@
-import { MenuOption } from "@/interfaces/Header";
+import { MenuOption } from "@/interfaces/HeaderAndFooter";
 
 export const MenuOptions: MenuOption[] = [
   { name: "Home", path: "/" },

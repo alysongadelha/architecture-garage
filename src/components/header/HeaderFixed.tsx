@@ -1,5 +1,5 @@
 import HeaderContainer from "./HeaderContainer";
-import architectureGarageLogo from "@/assets/logo.svg";
+import architectureGarageLogo from "@/assets/logo-fixed.svg";
 
 interface Props {
   isFixedNav: boolean;
@@ -10,7 +10,7 @@ const HeaderFixed = ({ isFixedNav, pageName }: Props) => {
     <div
       className={`${
         isFixedNav ? "opacity-100 " : "opacity-0"
-      } fixed top-0 col-span-12 grid w-full grid-cols-12 rounded-md bg-whiteColor-header drop-shadow-lg transition-opacity`}
+      } fixed top-0 col-span-12 grid w-full grid-cols-12 rounded-md bg-logoColor-surfaceMuted drop-shadow-lg transition-opacity`}
     >
       <HeaderContainer
         imageProps={{

@@ -1,43 +1,24 @@
+import Image from "next/image";
+import underConstruction from "@/assets/underConstruction.png";
+import { Container } from "./container/Container";
 interface Props {
   page: string;
 }
 
 const MockText = ({ page }: Props) => (
-  <main className="flex min-h-screen flex-col items-center justify-around">
-    <h1 className="font-heading text-2xl text-logoColor-grayAG">{page}</h1>
-    <div className="items-center justify-around self-center">
-      <p>
-        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Blanditiis
-        voluptates alias saepe, ducimus, cupiditate sit voluptatem quae deserunt
-        eum omnis vero error maxime quibusdam ut odit dignissimos, velit
-        officiis rerum?
-      </p>
-      <p>
-        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Blanditiis
-        voluptates alias saepe, ducimus, cupiditate sit voluptatem quae deserunt
-        eum omnis vero error maxime quibusdam ut odit dignissimos, velit
-        officiis rerum?
-      </p>
-      <p>
-        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Blanditiis
-        voluptates alias saepe, ducimus, cupiditate sit voluptatem quae deserunt
-        eum omnis vero error maxime quibusdam ut odit dignissimos, velit
-        officiis rerum?
-      </p>
-      <p>
-        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Blanditiis
-        voluptates alias saepe, ducimus, cupiditate sit voluptatem quae deserunt
-        eum omnis vero error maxime quibusdam ut odit dignissimos, velit
-        officiis rerum?
-      </p>
-      <p>
-        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Blanditiis
-        voluptates alias saepe, ducimus, cupiditate sit voluptatem quae deserunt
-        eum omnis vero error maxime quibusdam ut odit dignissimos, velit
-        officiis rerum?
-      </p>
-    </div>
-  </main>
+  <>
+    <Image
+      src={underConstruction}
+      alt="underConstruction"
+      className="absolute top-40 h-[70%] w-full opacity-40"
+    />
+
+    <main className="z-10 col-span-10 col-start-2 flex min-h-[63vh] flex-col items-center overflow-hidden rounded-md">
+      <h1 className=" rounded-md bg-logoColor-neutralShadedAG bg-opacity-60 text-center text-heading1 font-bold uppercase">
+        Sorry, we&apos;re doing some work on the page: <u>{page}</u>
+      </h1>
+    </main>
+  </>
 );
 
 export default MockText;

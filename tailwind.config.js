@@ -31,16 +31,13 @@ module.exports = {
         primaryColor: "#363432",
         secondaryColor: "#C9D7E1",
         accentColor: "#FF6F00",
-        whiteColor: {
-          header: "#F7F7F7",
-        },
-        orangeColor: {
-          logo: "",
-        },
         logoColor: {
-          grayAG: "#363432",
-          blackAG: "#212322",
-          orangeAG: "#ED9B33",
+          neutralMutedAG: "#363432",
+          neutralShadedAG: "#D9D9D9",
+          neutralAG: "#212322",
+          brandAG: "#ED9B33",
+          surface: "#FFFFFF",
+          surfaceMuted: "#F7F7F7",
         },
       },
     },

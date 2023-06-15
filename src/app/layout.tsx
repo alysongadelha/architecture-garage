@@ -1,7 +1,5 @@
 import Header from "@/components/header/Header";
-import Image from "next/image";
 import "./globals.css";
-import bgImagem from "@/assets/Logo_AG_BG.svg";
 import {
   Arimo,
   Inter,
@@ -9,6 +7,7 @@ import {
   Open_Sans,
   Playfair_Display,
 } from "next/font/google";
+import Footer from "@/components/footer/Footer";
 
 const montSerrat = Montserrat({
   subsets: ["latin"],
@@ -51,17 +50,11 @@ export default function RootLayout({
   return (
     <html lang="pt-br">
       <body
-        className={`${arimo.variable}  ${openSans.variable} ${montSerrat.variable} ${playfairDisplay.variable} grid grid-cols-12 gap-4 font-body text-logoColor-blackAG`}
+        className={`${arimo.variable}  ${openSans.variable} ${montSerrat.variable} ${playfairDisplay.variable} grid grid-cols-12 gap-4 font-body text-logoColor-neutralAG`}
       >
         <Header />
-
-        <div className="z-10 col-span-10 col-start-2 overflow-hidden rounded-md">
-          {children}
-        </div>
-
-        <footer className="z-10 col-span-12 bg-whiteColor-header">
-          <h1 className="text-gray-700">FOOTER</h1>
-        </footer>
+        {children}
+        <Footer />
       </body>
     </html>
   );
