@@ -22,7 +22,7 @@ const HeaderContainer = ({ imageProps, pageName }: Props) => {
   const { src, alt, width } = imageProps;
   return (
     <>
-      <div className="col-span-12 col-start-2">
+      <div className="col-span-12 col-start-2 py-2">
         {/* NAVIGATION DIV */}
         <div className="grid grid-cols-6 items-center gap-4">
           <div className="col-span-1 grid  ">
@@ -35,7 +35,7 @@ const HeaderContainer = ({ imageProps, pageName }: Props) => {
         {/* TEXT BOX */}
         {/* <HeaderTextBox pageName={pageName} /> */}
       </div>
-      <hr className="col-span-10 col-start-2 my-1 border-b-2" />
+      {/* <hr className="col-span-10 col-start-2 my-1 border-b-2" /> */}
     </>
   );
 };

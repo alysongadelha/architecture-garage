@@ -30,7 +30,7 @@ const Header = () => {
   }, []);
 
   return (
-    <header className="z-20 col-span-12 grid grid-cols-12 bg-whiteColor-header py-4 shadow-md">
+    <header className="z-20 col-span-12 grid grid-cols-12 bg-logoColor-surfaceMuted shadow-md">
       <HeaderFixed pageName={pageName} isFixedNav={isFixedNav} />
       <HeaderContainer
         imageProps={{

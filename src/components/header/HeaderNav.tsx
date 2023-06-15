@@ -15,8 +15,8 @@ const HeaderNav = ({ router }: Props) => {
               key={name}
               className={`${
                 isActive &&
-                "pointer-events-none rounded-md bg-logoColor-orangeAG"
-              } mx-4 cursor-pointer px-2 py-1  text-heading3  text-logoColor-grayAG transition delay-150 duration-300 ease-in-out hover:-translate-y-3 hover:scale-125 `}
+                "pointer-events-none rounded-md bg-logoColor-brandAG"
+              } mx-4 cursor-pointer px-2 py-1 text-heading3 font-bold text-logoColor-neutralMutedAG transition delay-150 duration-300 ease-in-out hover:-translate-y-3 hover:scale-125`}
             >
               {name}
             </Link>
