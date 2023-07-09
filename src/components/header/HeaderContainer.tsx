@@ -22,10 +22,10 @@ const HeaderContainer = ({ imageProps, pageName }: Props) => {
   const { src, alt, width } = imageProps;
   return (
     <>
-      <div className="col-span-12 col-start-2 py-2">
+      <div className="container mx-auto w-10/12 py-2">
         {/* NAVIGATION DIV */}
-        <div className="grid grid-cols-6 items-center gap-4">
-          <div className="col-span-1 grid  ">
+        <div className="flex flex-col items-center justify-between gap-4 lg:flex-row">
+          <div className="hidden w-auto lg:block">
             <Link href="/">
               <Image src={src} alt={alt} width={width} />
             </Link>

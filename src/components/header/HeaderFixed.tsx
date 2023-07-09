@@ -10,7 +10,7 @@ const HeaderFixed = ({ isFixedNav, pageName }: Props) => {
     <div
       className={`${
         isFixedNav ? "opacity-100 " : "opacity-0"
-      } fixed top-0 col-span-12 grid w-full grid-cols-12 rounded-md bg-logoColor-surfaceMuted drop-shadow-lg transition-opacity`}
+      } fixed top-0 w-full bg-logoColor-surfaceMuted drop-shadow-lg transition-opacity`}
     >
       <HeaderContainer
         imageProps={{

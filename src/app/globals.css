@@ -16,14 +16,39 @@
   }
 }
 
+html,
 body {
-  /*
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
-    */
+  overflow-x: hidden;
 }
+
+/*
+@layer base {
+  body {
+    @apply font-secondary text-lg leading-8 text-white;
+  }
+  .h2 {
+    @apply font-primary mb-6 text-[32px] uppercase tracking-[10%];
+  }
+  .h3 {
+    @apply font-primary mb-6 text-[26px] font-semibold leading-[46px];
+  }
+  .btn {
+    @apply font-primary rounded-full font-medium text-white;
+  }
+  .btn-sm {
+    @apply h-[48px] px-6 text-sm;
+  }
+  .btn-lg {
+    @apply h-[56px] px-10 text-base;
+  }
+  .btn-link {
+    @apply text-base;
+  }
+  .text-gradient {
+    @apply font-primary bg-gradient-to-r from-[#42A6E3] to-[#FF56F6] bg-clip-text font-bold text-transparent hover:from-[#FF56F6] hover:to-[#42A6E3];
+  }
+  .section {
+    @apply flex items-center py-8 lg:h-screen lg:py-24;
+  }
+}
+*/

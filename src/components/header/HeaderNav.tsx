@@ -6,7 +6,7 @@ interface Props {
 const HeaderNav = ({ router }: Props) => {
   return (
     <div className="col-span-3 col-end-7 hover:ease-in ">
-      <div className="flex justify-around">
+      <div className="flex flex-col justify-around lg:flex-row">
         {MenuOptions.map(({ name, path }) => {
           const isActive = router === name;
           return (
