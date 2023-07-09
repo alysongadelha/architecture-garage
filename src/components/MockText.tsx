@@ -10,7 +10,7 @@ const MockText = ({ page }: Props) => (
     <Image
       src={underConstruction}
       alt="underConstruction"
-      className="absolute top-40 h-[70%] w-full opacity-40"
+      className="absolute top-28 h-[70%] w-full opacity-40"
     />
 
     <main className="z-10 col-span-10 col-start-2 flex min-h-[63vh] flex-col items-center overflow-hidden rounded-md">

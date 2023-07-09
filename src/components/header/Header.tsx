@@ -23,19 +23,20 @@ const Header = () => {
   }
   useEffect(() => {
     const scroll = () => {
-      setIsFixedNav(window.scrollY > 120);
+      setIsFixedNav(window.scrollY > 110);
     };
     window.addEventListener("scroll", scroll, false);
     return () => window.removeEventListener("scroll", scroll, false);
   }, []);
 
   return (
-    <header className="z-20 col-span-12 grid grid-cols-12 bg-logoColor-surfaceMuted shadow-md">
+    <header className="relative z-10 w-full bg-logoColor-surfaceMuted shadow-md">
       <HeaderFixed pageName={pageName} isFixedNav={isFixedNav} />
       <HeaderContainer
         imageProps={{
           src: architectureGarageLogo,
           alt: "Architecture Garage Logo",
+          width: 100,
         }}
         pageName={pageName}
       />

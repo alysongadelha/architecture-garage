@@ -5,12 +5,10 @@ interface Props {
   children: React.ReactNode;
 }
 
-export const Container = ({ position = "static", children }: Props) => {
+export const Container = ({ position = "relative", children }: Props) => {
   return (
-    <main
-      className={`z-10 col-span-10 col-start-2 min-h-[63vh] overflow-hidden rounded-md bg-red-500 ${position}`}
-    >
+    <div className={`container mx-auto  min-h-[123vh] w-10/12 ${position}`}>
       {children}
-    </main>
+    </div>
   );
 };

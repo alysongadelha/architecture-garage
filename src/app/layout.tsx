@@ -50,7 +50,7 @@ export default function RootLayout({
   return (
     <html lang="pt-br">
       <body
-        className={`${arimo.variable}  ${openSans.variable} ${montSerrat.variable} ${playfairDisplay.variable} grid grid-cols-12 gap-4 font-body text-logoColor-neutralAG`}
+        className={`${arimo.variable}  ${openSans.variable} ${montSerrat.variable} ${playfairDisplay.variable} w-full gap-4 font-body text-logoColor-neutralAG`}
       >
         <Header />
         {children}

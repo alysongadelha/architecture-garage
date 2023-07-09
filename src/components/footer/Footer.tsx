@@ -8,16 +8,13 @@ import { medias } from "@/constants/FooterMedias";
 
 const Footer = () => {
   return (
-    <footer className="z-10 col-span-12 grid grid-cols-12 bg-logoColor-surfaceMuted">
-      <div className="col-span-10 col-start-2 grid grid-cols-6 gap-2">
-        <div className="col-span-2 my-4">
+    <footer className="w-full bg-logoColor-surfaceMuted">
+      <div className="container mx-auto flex w-10/12 flex-col justify-between lg:flex-row">
+        <div className=" my-4">
           <Image src={footerLog} alt="Footer Logo" />
         </div>
         {FooterOptions.map((footerOption) => (
-          <div
-            key={footerOption.main}
-            className="col-span-1 my-3 text-gray-700"
-          >
+          <div key={footerOption.main} className=" my-3 text-gray-700">
             <h3 className="text-heading3 font-bold">{footerOption.main}</h3>
             <ul>
               {footerOption.options.map((option) => (
@@ -33,7 +30,7 @@ const Footer = () => {
             </ul>
           </div>
         ))}
-        <div className="col-span-1 my-3 ">
+        <div className="my-3 ">
           <h3 className="text-heading3 font-bold text-gray-700">
             Midias Sociais
           </h3>

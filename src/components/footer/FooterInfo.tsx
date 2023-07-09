@@ -1,9 +1,9 @@
 import Link from "next/link";
 
 export const FooterInfo = () => (
-  <div className="col-span-10 col-start-2">
-    <hr className="col-span-10 col-start-2 my-1 border-b-2" />
-    <div className="flex justify-between">
+  <div className="container mx-auto w-10/12">
+    <hr className="my-1 border-b-2" />
+    <div className="flex flex-col justify-between lg:flex-row">
       <div>
         <p className="text-heading5">
           Copyright <span className="text-logoColor-brandAG">©</span> 2023
