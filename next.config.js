@@ -12,6 +12,9 @@ const nextConfig = {
   compiler: {
     styledComponents: true,
   },
+  images: {
+    domains: ["picsum.photos", "firebasestorage.googleapis.com"],
+  },
 };
 
 module.exports = nextConfig;
