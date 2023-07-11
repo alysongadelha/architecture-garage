@@ -40,6 +40,11 @@ module.exports = {
           surfaceMuted: "#F7F7F7",
         },
       },
+      extend: {
+        visibility: ["group-hover"],
+        transform: ["group-hover"],
+        translate: ["group-hover"],
+      },
     },
   },
   plugins: [],

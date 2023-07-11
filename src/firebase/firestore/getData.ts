@@ -7,6 +7,7 @@ import {
   collectionGroup,
   getDocs,
 } from "firebase/firestore";
+import { getDefaultImage, getImageList } from "./getBucket";
 
 const db = getFirestore(firebase_app);
 export async function getDocument(collection: string, id: string) {
@@ -25,15 +26,23 @@ export async function getDocument(collection: string, id: string) {
 
 export async function getCollection(collection: string) {
   let CollectionRef = collectionGroup(db, collection);
-  let result = null;
+  let projects = null;
   let error = null;
 
   try {
     const response = await getDocs(CollectionRef);
-    result = response.docs.map((doc) => doc.data() as ProjectsData);
+    const projectsData = response.docs.map((doc) => doc.data() as ProjectsData);
+    const projectsDataFull = projectsData.map(async (project) => {
+      const { imageArray } = await getImageList(project.image);
+      return {
+        ...project,
+        image: imageArray[0],
+      };
+    });
+    projects = await Promise.all(projectsDataFull);
   } catch (error) {
     error = error;
   }
 
-  return { result, error };
+  return { projects, error };
 }

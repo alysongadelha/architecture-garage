@@ -5,11 +5,14 @@ import Error from "@/app/error";
 import CardContainer from "@/components/cards/CardContainer";
 import Card from "@/components/cards/Card";
 import { ProjectsData } from "@/interface/Project";
+import { isPromise } from "@/utils";
 
 type Props = {};
 
 const Shop = async (props: Props) => {
-  const { result, error } = await getCollection("projects");
+  const { projects, error } = await getCollection("projects");
+
+  if (isPromise(projects)) return <p>Loading</p>;
 
   if (error !== null)
     return <Error error={error} reset={() => console.log("TO DO")} />;
@@ -24,9 +27,9 @@ const Shop = async (props: Props) => {
     <Container>
       <Wrapper>
         <h1 className="text-center text-heading1">Projetos</h1>
-        {result !== null ? (
+        {projects !== null ? (
           <CardContainer>
-            {result.map((props) => renderCards(props))}
+            {projects.map((props) => renderCards(props))}
           </CardContainer>
         ) : null}
       </Wrapper>
