@@ -1,4 +1,3 @@
-import Header from "@/components/header/Header";
 import "./globals.css";
 import {
   Arimo,
@@ -8,6 +7,7 @@ import {
   Playfair_Display,
 } from "next/font/google";
 import Footer from "@/components/footer/Footer";
+import { HeaderV2 } from "@/components/header/v2/HeaderV2";
 
 const montSerrat = Montserrat({
   subsets: ["latin"],
@@ -52,7 +52,7 @@ export default function RootLayout({
       <body
         className={`${arimo.variable}  ${openSans.variable} ${montSerrat.variable} ${playfairDisplay.variable} w-full gap-4 font-body text-logoColor-neutralAG`}
       >
-        <Header />
+        <HeaderV2 />
         {children}
         <Footer />
       </body>
