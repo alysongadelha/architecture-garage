@@ -7,7 +7,9 @@ interface Props {
 
 export const Container = ({ position = "relative", children }: Props) => {
   return (
-    <div className={`container mx-auto  min-h-[75vh] w-10/12 ${position}`}>
+    <div
+      className={`container mx-auto mt-20 min-h-[75vh] w-10/12 md:mt-36 ${position} mb-4`}
+    >
       {children}
     </div>
   );
