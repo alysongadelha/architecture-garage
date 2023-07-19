@@ -6,14 +6,16 @@ import architectureGarageLogo from "@/assets/logo.svg";
 import architectureGarageLogoSmall from "@/assets/logo-fixed.svg";
 import closeIcon from "@public/icons/close.svg";
 import hamburgerIcon from "@public/icons/hamburger-menu.svg";
-import { useState } from "react";
+import { useContext } from "react";
 import { NavLinks } from "./NavLinks";
 import { usePathname } from "next/navigation";
+import { AppContext } from "@/hooks/AppContext";
 
 type Props = {};
 
 export const HeaderV2 = (props: Props) => {
-  const [navbar, setNavbar] = useState(false);
+  const { navbar, setNavbar } = useContext(AppContext);
+  console.log("currentUser", navbar, setNavbar);
 
   let pageName: string;
   switch (usePathname()) {

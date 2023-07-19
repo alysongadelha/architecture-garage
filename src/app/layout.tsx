@@ -8,6 +8,7 @@ import {
 } from "next/font/google";
 import Footer from "@/components/footer/Footer";
 import { HeaderV2 } from "@/components/header/v2/HeaderV2";
+import { AppContextProvider } from "@/hooks/AppContext";
 
 const montSerrat = Montserrat({
   subsets: ["latin"],
@@ -52,9 +53,11 @@ export default function RootLayout({
       <body
         className={`${arimo.variable}  ${openSans.variable} ${montSerrat.variable} ${playfairDisplay.variable} w-full gap-4 font-body text-logoColor-neutralAG`}
       >
-        <HeaderV2 />
-        {children}
-        <Footer />
+        <AppContextProvider>
+          <HeaderV2 />
+          {children}
+          <Footer />
+        </AppContextProvider>
       </body>
     </html>
   );
