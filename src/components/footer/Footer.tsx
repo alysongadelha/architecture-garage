@@ -1,12 +1,17 @@
-/* eslint-disable react/jsx-key */
+"use client";
 import Link from "next/link";
 import { FooterInfo } from "./FooterInfo";
 import { FooterOptions } from "@/constants/Footer";
 import Image from "next/image";
 import footerLog from "@/assets/footerLogo.svg";
 import { medias } from "@/constants/FooterMedias";
+import { useContext } from "react";
+import { AppContext } from "@/hooks/AppContext";
 
 const Footer = () => {
+  const { navbar } = useContext(AppContext);
+
+  if (navbar) return null;
   return (
     <footer className="w-full bg-logoColor-surfaceMuted">
       <div className="container mx-auto flex w-10/12 flex-col justify-between lg:flex-row">

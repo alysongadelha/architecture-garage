@@ -1,4 +1,6 @@
-import React from "react";
+"use client";
+import { AppContext } from "@/hooks/AppContext";
+import React, { useContext } from "react";
 
 interface Props {
   position?: "relative" | "absolute" | "static" | "fixed" | "sticky";
@@ -6,6 +8,9 @@ interface Props {
 }
 
 export const Container = ({ position = "relative", children }: Props) => {
+  const { navbar } = useContext(AppContext);
+
+  if (navbar) return null;
   return (
     <div
       className={`container mx-auto mt-20 min-h-[75vh] w-10/12 md:mt-36 ${position} mb-4`}
