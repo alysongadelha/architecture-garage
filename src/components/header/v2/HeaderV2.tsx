@@ -15,7 +15,6 @@ type Props = {};
 
 export const HeaderV2 = (props: Props) => {
   const { navbar, setNavbar } = useContext(AppContext);
-  console.log("currentUser", navbar, setNavbar);
 
   let pageName: string;
   switch (usePathname()) {
@@ -32,7 +31,7 @@ export const HeaderV2 = (props: Props) => {
 
   return (
     <div>
-      <nav className="fixed left-0 right-0 top-0 z-10 w-full bg-logoColor-surfaceMuted">
+      <nav className="fixed left-0 right-0 top-0 z-30 w-full bg-logoColor-surfaceMuted">
         <div className="mx-auto justify-between px-4 md:flex md:items-center md:px-8 lg:max-w-7xl">
           <div>
             <div className="flex items-center justify-between py-3 md:block md:py-5">
