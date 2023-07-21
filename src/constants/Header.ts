@@ -1,7 +1,7 @@
 import { MenuOption } from "@/interfaces/HeaderAndFooter";
 
 export const MenuOptions: MenuOption[] = [
-  { name: "Home", path: "/" },
-  { name: "All Projects", path: "/shop" },
-  { name: "About Us", path: "/about-us" },
+  { name: "Início", path: "/" },
+  { name: "Projetos", path: "/shop" },
+  { name: "Sobre", path: "/about-us" },
 ];

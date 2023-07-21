@@ -19,13 +19,13 @@ export const HeaderV2 = (props: Props) => {
   let pageName: string;
   switch (usePathname()) {
     case "/shop":
-      pageName = "All Projects";
+      pageName = "Projetos";
       break;
     case "/about-us":
-      pageName = "About Us";
+      pageName = "Sobre";
       break;
     default:
-      pageName = "Home";
+      pageName = "Início";
       break;
   }
 
