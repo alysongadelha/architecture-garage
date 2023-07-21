@@ -4,7 +4,7 @@ type Props = {
 
 const CardContainer = ({ children }: Props) => {
   return (
-    <section className=" grid grid-cols-1 gap-x-3 gap-y-14  md:grid-cols-2 lg:grid-cols-3">
+    <section className=" grid grid-cols-1 gap-x-3 gap-y-14  md:grid-cols-2 cardContainer:grid-cols-3">
       {children}
     </section>
   );

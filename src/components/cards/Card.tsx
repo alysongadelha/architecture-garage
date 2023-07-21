@@ -14,13 +14,13 @@ const Card = ({ propsApi }: Props) => {
   const { image, squareFootage, stories, description, baths, beds, name } =
     propsApi;
   return (
-    <div className=" h-[330px] w-[270px] cursor-pointer overflow-hidden rounded-lg bg-slate-100 hover:shadow-lg hover:shadow-gray-950">
+    <div className="group/card h-[330px] w-[270px] cursor-pointer bg-transparent">
       {/* Image and Text hovered */}
-      <div className="group relative h-[250px] w-[270px] overflow-hidden">
-        <div className="invisible absolute flex h-[250px] w-[270px] translate-y-full items-center justify-center bg-gray-700/70 text-center transition-all duration-500 group-hover:visible group-hover:translate-y-0">
-          <p className="text-white ">{`Project name: "${
+      <div className="group relative h-[250px] w-[270px] overflow-hidden rounded-t group-hover/card:shadow-lg group-hover/card:shadow-gray-950/40">
+        <div className="bg-text invisible absolute flex h-[250px] w-[270px] translate-y-full items-end px-3 pb-5 text-center transition-all duration-500 group-hover:visible group-hover:translate-y-0">
+          <p className="hyphens-auto break-all font-bold text-slate-900">{`Project name: "${
             name || "fail to load"
-          }" and a description: "${description || "fail to load"}"`}</p>
+          }" and a description: "${description || "fail to load"} "`}</p>
         </div>
         <div className="">
           <Image
@@ -32,9 +32,9 @@ const Card = ({ propsApi }: Props) => {
         </div>
       </div>
       {/* Details */}
-      <div className="mt-[10px] h-[70px] w-[270px] flex-col bg-slate-300">
+      <div className="mt-[10px] h-[70px] w-[270px] flex-col overflow-x-hidden rounded-b bg-logoColor-brandAG shadow-lg group-hover/card:shadow-lg group-hover/card:shadow-gray-950/40">
         {/* Icons */}
-        <div className="flex max-h-[38px] items-center justify-around border-b-[1px] py-1">
+        <div className="flex max-h-[38px] items-center justify-around py-1">
           <div className="flex w-9 items-center justify-center">
             <Image src={sqftIcon} alt="square-footage" />
           </div>
@@ -49,7 +49,7 @@ const Card = ({ propsApi }: Props) => {
           </div>
         </div>
         {/* Values */}
-        <div className="flex max-h-[17px] items-center justify-around border-b-[1px] text-[10px]">
+        <div className="flex max-h-[17px] items-center justify-around border-y-[1px] border-black bg-logoColor-surfaceMuted text-[10px] shadow-md shadow-gray-900/40">
           <div className="flex w-9 items-center justify-center">
             <p>{`${squareFootage}.00`}</p>
           </div>
