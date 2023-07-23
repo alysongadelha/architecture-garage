@@ -1,7 +1,7 @@
-import MockText from "@/components/MockText";
+import MaintenanceDiv from "@/components/MaintenanceDiv";
 
 const AboutUs = () => {
-  return <MockText page={"Privacy policy"} />;
+  return <MaintenanceDiv page={"Privacy policy"} />;
 };
 
 export default AboutUs;

@@ -12,6 +12,7 @@ module.exports = {
         "gradient-conic":
           "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
         home: "url('/image/bg-image-home.png')",
+        maintenance: "url('/image/underConstruction.png')",
       },
       fontFamily: {
         body: "var(--font-arimo)",

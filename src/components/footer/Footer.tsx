@@ -1,7 +1,7 @@
 "use client";
 import Link from "next/link";
 import { FooterInfo } from "./FooterInfo";
-import { FooterOptions } from "@/constants/Footer";
+import { Footerlinks } from "@/constants/Footer";
 import Image from "next/image";
 import footerLog from "@/assets/footerLogo.svg";
 import { medias } from "@/constants/FooterMedias";
@@ -18,17 +18,17 @@ const Footer = () => {
         <div className=" my-4">
           <Image src={footerLog} alt="Footer Logo" />
         </div>
-        {FooterOptions.map((footerOption) => (
-          <div key={footerOption.main} className=" my-3 text-gray-700">
-            <h3 className="text-heading3 font-bold">{footerOption.main}</h3>
+        {Footerlinks.map((links) => (
+          <div key={links.title} className=" my-3 text-gray-700">
+            <h3 className="text-heading3 font-bold">{links.title}</h3>
             <ul>
-              {footerOption.options.map((option) => (
-                <li key={option.name} className="my-3">
+              {links.links.map((item) => (
+                <li key={item.title} className="my-3">
                   <Link
                     className=" text-heading5 font-semibold"
-                    href={option.path}
+                    href={item.url}
                   >
-                    {option.name}
+                    {item.title}
                   </Link>
                 </li>
               ))}

@@ -1,7 +1,7 @@
-import { MenuOption } from "@/interfaces/HeaderAndFooter";
+import { Links } from "@/interfaces/HeaderAndFooter";
 
-export const MenuOptions: MenuOption[] = [
-  { name: "Início", path: "/" },
-  { name: "Projetos", path: "/shop" },
-  { name: "Sobre", path: "/about-us" },
+export const NavOptions: Links[] = [
+  { title: "Início", url: "/" },
+  { title: "Projetos", url: "/shop" },
+  { title: "Sobre", url: "/about-us" },
 ];

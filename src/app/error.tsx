@@ -1,5 +1,5 @@
 "use client";
-import MockText from "@/components/MockText";
+import MaintenanceDiv from "@/components/MaintenanceDiv";
 import { Container } from "@/components/container/Container";
 import { useRouter } from "next/navigation";
 
