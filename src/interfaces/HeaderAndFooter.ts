@@ -1,9 +1,9 @@
-export interface MenuOption {
-  name: string;
-  path: string;
+export interface Links {
+  title: string;
+  url: string;
 }
 
 export interface FooterOption {
-  main: string;
-  options: MenuOption[];
+  title: string;
+  links: Links[];
 }

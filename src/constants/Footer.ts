@@ -1,63 +1,63 @@
 import { FooterOption } from "@/interfaces/HeaderAndFooter";
 
-export const FooterOptions: FooterOption[] = [
+export const Footerlinks: FooterOption[] = [
   {
-    main: "Início",
-    options: [
+    title: "Início",
+    links: [
       {
-        name: "Projetos",
-        path: "/shop",
+        title: "Projetos",
+        url: "/shop",
       },
     ],
   },
   //   {
-  //     main: "Serviços",
-  //     options: [
+  //     title: "Serviços",
+  //     links: [
   //       {
-  //         name: "O que inclui",
-  //         path: "/si/included",
+  //         title: "O que inclui",
+  //         url: "/si/included",
   //       },
   //       {
-  //         name: "*Economia*",
-  //         path: "/si/economy",
+  //         title: "*Economia*",
+  //         url: "/si/economy",
   //       },
   //       {
-  //         name: "Proj. Personalizado",
-  //         path: "/custom/project",
+  //         title: "Proj. Personalizado",
+  //         url: "/custom/project",
   //       },
   //     ],
   //   },
   {
-    main: "Sobre",
-    options: [
+    title: "Sobre",
+    links: [
       {
-        name: "Nossa Historia",
-        path: "/si/our-history",
+        title: "Nossa Historia",
+        url: "/si/our-history",
       },
       {
-        name: "Preços",
-        path: "/custom/price",
+        title: "Preços",
+        url: "/custom/price",
       },
       {
-        name: "FAQ",
-        path: "/si/common-questions",
+        title: "FAQ",
+        url: "/si/common-questions",
       },
       {
-        name: "Contato",
-        path: "/si/contact",
+        title: "Contato",
+        url: "/si/contact",
       },
     ],
   },
   {
-    main: "Políticas",
-    options: [
+    title: "Políticas",
+    links: [
       {
-        name: "Politica de Devolução",
-        path: "/custom/return-policy",
+        title: "Politica de Devolução",
+        url: "/custom/return-policy",
       },
       {
-        name: "Politica de Envio",
-        path: "/custom/shipping-policy",
+        title: "Politica de Envio",
+        url: "/custom/shipping-policy",
       },
     ],
   },

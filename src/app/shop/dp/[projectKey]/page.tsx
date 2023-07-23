@@ -1,5 +1,5 @@
 "use client";
-import MockText from "@/components/MockText";
+import MaintenanceDiv from "@/components/MaintenanceDiv";
 import { NextPage } from "next";
 
 interface Props {
@@ -11,7 +11,7 @@ interface Props {
 const ProjectDetailsPage: NextPage<Props> = ({ params }) => {
   const { projectKey } = params;
 
-  return <MockText page={`PRODUCT DETAILS WITH CODE: ${projectKey}`} />;
+  return <MaintenanceDiv page={`PRODUCT DETAILS WITH CODE: ${projectKey}`} />;
 };
 
 export default ProjectDetailsPage;

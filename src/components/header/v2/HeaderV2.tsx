@@ -82,11 +82,7 @@ export const HeaderV2 = (props: Props) => {
                 navbar ? "block p-12 md:p-0" : "hidden"
               }`}
             >
-              <NavLinks
-                router={pageName}
-                setNavbar={setNavbar}
-                navbar={navbar}
-              />
+              <NavLinks router={pageName} setNavbar={setNavbar} />
             </div>
           </div>
         </div>
