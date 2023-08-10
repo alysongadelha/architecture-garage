@@ -1,4 +1,3 @@
-import MaintenanceDiv from "@/components/MaintenanceDiv";
 import { Container } from "@/components/container/Container";
 import Image from "next/image";
 import logo from "@public/ag-logo-written.svg";

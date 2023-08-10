@@ -1,7 +1,6 @@
 import "./globals.css";
 import {
   Arimo,
-  Inter,
   Montserrat,
   Open_Sans,
   Playfair_Display,
@@ -36,11 +35,9 @@ const arimoBold = Arimo({
   weight: "700",
 });
 
-const inter = Inter({ subsets: ["latin"] });
-
 export const metadata = {
   title: "Architecture Garage",
-  description: "A site for Architecture Project Sales",
+  description: "A website for Architecture Project Sales",
 };
 
 export default function RootLayout({
