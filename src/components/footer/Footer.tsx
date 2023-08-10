@@ -37,7 +37,7 @@ const Footer = () => {
         ))}
         <div className="my-3 ">
           <h3 className="text-heading3 font-bold text-gray-700">
-            Midias Sociais
+            Mídias Sociais
           </h3>
           <div className="inline-flex flex-wrap">
             {medias.map(({ mediaName, path, icon }) => (
