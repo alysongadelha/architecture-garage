@@ -5,7 +5,7 @@ import logo from "@public/ag-logo-written.svg";
 export default function Home() {
   return (
     <Container>
-      <div className="bg-blur flex h-[450px] items-center justify-center rounded-sm bg-home bg-cover bg-center bg-no-repeat">
+      <div className="bg-blur flex h-[450px] items-center justify-center rounded-sm bg-home bg-cover bg-center bg-no-repeat lg:h-[58vh]">
         <div className="relative flex h-full flex-col justify-center ">
           {/* Image */}
           <div className="z-10 flex justify-center  md:relative md:-left-2 lg:justify-start">

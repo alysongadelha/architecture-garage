@@ -24,8 +24,11 @@ export const HeaderV2 = (props: Props) => {
     case "/about-us":
       pageName = "Sobre";
       break;
-    default:
+    case "/":
       pageName = "Início";
+      break;
+    default:
+      pageName = "";
       break;
   }
 
@@ -42,6 +45,7 @@ export const HeaderV2 = (props: Props) => {
                   alt={"alt"}
                   width={100}
                   className="hidden md:block"
+                  priority={true}
                 />
                 <Image
                   src={architectureGarageLogoSmall}

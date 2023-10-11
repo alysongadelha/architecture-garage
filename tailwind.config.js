@@ -13,6 +13,7 @@ module.exports = {
           "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
         home: "url('/image/bg-image-home.png')",
         maintenance: "url('/image/underConstruction.png')",
+        arrowDown: "url('/icons/arrow-down.png')",
       },
       fontFamily: {
         body: "var(--font-arimo)",
@@ -28,6 +29,7 @@ module.exports = {
         LargeP: "24px",
         paragraph: "18px",
         button: "18px",
+        icon: "10px",
       },
       colors: {
         primaryColor: "#363432",
@@ -53,7 +55,10 @@ module.exports = {
       screens: {
         cardContainer: "1155px",
       },
+      minHeight: {
+        container: "58vh",
+      },
     },
   },
-  plugins: [],
+  plugins: [require("@tailwindcss/forms")],
 };
