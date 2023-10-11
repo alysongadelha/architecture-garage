@@ -1,4 +1,4 @@
-import { ProjectsData } from "@/interface/Project";
+import { ProjectData, ProjectsData } from "@/interfaces/Project";
 import { firebase_app } from "@firebase/config";
 import {
   getFirestore,
@@ -16,7 +16,9 @@ export async function getDocument(collection: string, id: string) {
   let error = null;
 
   try {
-    result = await getDoc(docRef);
+    const response = (await getDoc(docRef)).data() as ProjectData;
+    const { imageArray } = await getImageList(response.imageCluster);
+    result = { ...response, imageArray };
   } catch (error) {
     error = error;
   }

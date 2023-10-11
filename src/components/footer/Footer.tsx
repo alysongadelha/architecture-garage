@@ -16,7 +16,7 @@ const Footer = () => {
     <footer className="w-full bg-logoColor-surfaceMuted">
       <div className="container mx-auto flex w-10/12 flex-col justify-between lg:flex-row">
         <div className=" my-4">
-          <Image src={footerLog} alt="Footer Logo" />
+          <Image src={footerLog} priority={true} alt="Footer Logo" />
         </div>
         {Footerlinks.map((links) => (
           <div key={links.title} className=" my-3 text-gray-700">
