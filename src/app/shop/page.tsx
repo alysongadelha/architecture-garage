@@ -7,11 +7,15 @@ import Card from "@/components/cards/Card";
 import { ProjectsData } from "@/interfaces/Project";
 import { isPromise } from "@/utils";
 import MaintenanceDiv from "@/components/MaintenanceDiv";
+import { getProjects } from "@/services/getProjectDetails";
+import { headers } from "next/headers";
 
 type Props = {};
 
 const Shop = async (props: Props) => {
-  const { projects, error } = await getCollection("projects");
+  const headersList = headers();
+  const hostName = headersList.get("host") || "architecture-garage.vercel.app";
+  const { result: projects, error } = await getProjects(hostName);
 
   if (isPromise(projects)) return <p>Loading</p>;
 
@@ -27,7 +31,6 @@ const Shop = async (props: Props) => {
   return (
     <Container>
       <Wrapper>
-        {/* <h1 className="text-center text-heading1 uppercase">Projetos</h1> */}
         {projects !== null ? (
           <CardContainer>
             {projects.map((project) => renderCards(project))}

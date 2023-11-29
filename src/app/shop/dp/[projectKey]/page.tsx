@@ -63,9 +63,9 @@ const ProjectDetailsPage = async ({ params }: Props) => {
         </section>
       </Container>
       {/* ICONS */}
-      {project.icons.length ? (
+      {project.assets.length ? (
         <section className="mt- mx-auto my-6 flex w-full flex-wrap justify-center bg-logoColor-surfaceMuted ">
-          {project.icons.map((icon) => (
+          {project.assets.map((icon) => (
             <div
               key={icon.id}
               className="flex flex-col items-center p-2 text-center text-icon lg:mx-6"
@@ -84,18 +84,18 @@ const ProjectDetailsPage = async ({ params }: Props) => {
       ) : null}
       {/* Separated component */}
       <BuySection
-        projectTypes={project.projectType}
+        projectTypes={project.projectTypes}
         additionalOptions={project.additionalOptions}
       />
       {/* About the project */}
-      {project.description.length ? (
+      {project.longDescription.length ? (
         <Container marginTopDefinition={[10, 4, 4]} minimumScreenSize>
           <main className="flex flex-col gap-4 bg-logoColor-surfaceMuted p-2 px-10">
             <h2 className="text-heading3 font-semibold uppercase">
               Sobre o Projeto
             </h2>
             <div className="lg:min-h-96 flex flex-col justify-center gap-6 ">
-              {project.description.map((paragraph) => (
+              {project.longDescription.map((paragraph) => (
                 <p key={paragraph} className="text-paragraph leading-loose">
                   {paragraph}
                 </p>

@@ -6,14 +6,17 @@ type customFields = {
 };
 
 export type ProjectsData = {
-  projectId: number;
-  image: string;
-  stories: number;
-  description: string;
-  beds: number;
-  squareMeters: number;
-  baths: number;
+  id: string;
+  projectId: string;
   name: string;
+  image: string;
+  teaser: string;
+  baths: string;
+  beds: string;
+  squareMeters: string;
+  stories: string;
+  createdAt: string;
+  status: string;
 };
 
 type icon = {
@@ -23,25 +26,16 @@ type icon = {
   alt: string;
 };
 
-export type ProjectType = customFields[];
+export type ProjectTypes = customFields[];
 export type AdditionalOptions = customFields[];
 
 export type ProjectData = {
   additionalOptions: AdditionalOptions;
-  projectType: ProjectType;
+  projectTypes: ProjectTypes;
   imageCluster: string;
-  stories: number;
-  description: string[];
-  beds: number;
-  squareMeters: string;
-  baths: number;
+  longDescription: string[];
   name: string;
-  landSize: string;
-  garage: number;
-  gourmetArea: boolean;
-  office: boolean;
-  pool: boolean;
-  icons: icon[];
+  assets: icon[];
 };
 
 export type ProjectFullData = ProjectData & {
