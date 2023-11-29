@@ -6,10 +6,10 @@ import Optionals from "./Optionals";
 import ProjectDefinition from "./ProjectDefinition";
 import SectionContainer from "./SectionContainer";
 import Modal from "../Modal";
-import { AdditionalOptions, ProjectType } from "@/interfaces/Project";
+import { AdditionalOptions, ProjectTypes } from "@/interfaces/Project";
 
 type Props = {
-  projectTypes: ProjectType;
+  projectTypes: ProjectTypes;
   additionalOptions: AdditionalOptions;
 };
 

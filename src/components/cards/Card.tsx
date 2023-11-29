@@ -16,16 +16,8 @@ type Props = {
 const Card = ({ project }: Props) => {
   const router = useRouter();
 
-  const {
-    projectId,
-    image,
-    squareMeters,
-    stories,
-    description,
-    baths,
-    beds,
-    name,
-  } = project;
+  const { projectId, image, squareMeters, stories, teaser, baths, beds, name } =
+    project;
 
   const handleclick = () => {
     router.push(`/shop/dp/${projectId}`);
@@ -38,10 +30,9 @@ const Card = ({ project }: Props) => {
     >
       {/* Image and Text hovered */}
       <div className="group relative h-[250px] w-[270px] overflow-hidden rounded-t group-hover/card:shadow-lg group-hover/card:shadow-gray-950/40">
-        <div className="bg-text invisible absolute flex h-[250px] w-[270px] translate-y-full items-end px-3 pb-5 text-center transition-all duration-500 group-hover:visible group-hover:translate-y-0">
-          <p className="hyphens-auto break-all font-bold text-slate-900">{`Project name: "${
-            name || "fail to load"
-          }" and a description: "${description || "fail to load"} "`}</p>
+        <div className="bg-text invisible absolute flex h-[250px] w-[270px] translate-y-full flex-col justify-end px-3 pb-5  text-center transition-all duration-500 group-hover:visible group-hover:translate-y-0">
+          <span className=" font-bold text-slate-900">{name}</span>
+          <span className=" font-bold text-slate-900">{teaser}</span>
         </div>
 
         <Image

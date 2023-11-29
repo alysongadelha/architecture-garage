@@ -1,10 +1,10 @@
 import React from "react";
 import Select from "../form/Select";
-import { ProjectType } from "@/interfaces/Project";
+import { ProjectTypes } from "@/interfaces/Project";
 
 type Props = {
   selectionAction: (value: number) => void;
-  projectTypeOptions: ProjectType;
+  projectTypeOptions: ProjectTypes;
 };
 
 const ProjectDefinition = ({ selectionAction, projectTypeOptions }: Props) => {

@@ -1,16 +1,17 @@
-import { ProjectFullData } from "@/interfaces/Project";
+import { ProjectFullData, ProjectsData } from "@/interfaces/Project";
 
-export const getProject = async (id: string, basePath: string) => {
+export const getProjects = async (basePath: string) => {
   const protocol = basePath === "localhost:3236" ? "http://" : "https://";
-  const result = await fetch(
-    `${protocol}${basePath}/api/shop/projects/images`,
-    {
-      method: "GET",
-    }
-  );
-  const json = await result.json();
 
-  return json;
+  const fetchProject = await fetch(`${protocol}${basePath}/api/shop/projects`, {
+    method: "GET",
+    next: { revalidate: 300 },
+  });
+
+  const { result, error }: { result: ProjectsData[]; error: any } =
+    await fetchProject.json();
+
+  return { result, error };
 };
 
 export const getProjectDetails = async (
