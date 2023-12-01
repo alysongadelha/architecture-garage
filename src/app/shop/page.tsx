@@ -1,14 +1,13 @@
 import { Container } from "@/components/container/Container";
 import Wrapper from "@/components/container/Wrapper";
-import { getCollection } from "@/firebase/firestore/getData";
 import Error from "@/app/error";
 import CardContainer from "@/components/cards/CardContainer";
 import Card from "@/components/cards/Card";
 import { ProjectsData } from "@/interfaces/Project";
 import { isPromise } from "@/utils";
 import MaintenanceDiv from "@/components/MaintenanceDiv";
-import { getProjects } from "@/services/getProjectDetails";
 import { headers } from "next/headers";
+import { getProjects } from "@/services/getProjects";
 
 type Props = {};
 
