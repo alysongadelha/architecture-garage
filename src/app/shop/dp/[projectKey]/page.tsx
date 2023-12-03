@@ -43,7 +43,6 @@ const ProjectDetailsPage = async ({ params }: Props) => {
   const headersList = headers();
   const hostName = headersList.get("host") || "architecture-garage.vercel.app";
 
-  //   const projectDetailImages = await getProject(projectKey, hostName);
   const { result: project, error } = await getProjectDetails(
     projectKey,
     hostName
