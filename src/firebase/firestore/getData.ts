@@ -35,12 +35,10 @@ export async function getCollection(collection: string) {
     const response = await getDocs(CollectionRef);
     const projectsData = response.docs.map((doc) => doc.data() as ProjectsData);
     const projectsDataFull = projectsData.map(async (project) => {
-      const {
-        imageArray: [defaultImage, ...images],
-      } = await getImageList(project.image);
+      const { image, error } = await getDefaultImage(project.image, ".jpg");
       return {
         ...project,
-        image: defaultImage,
+        image,
       };
     });
     result = await Promise.all(projectsDataFull);

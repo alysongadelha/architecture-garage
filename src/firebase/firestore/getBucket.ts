@@ -10,7 +10,7 @@ export const getDefaultImage = async (
 ) => {
   const pathReference = ref(
     storage,
-    `projects/${folder}/default${fileExtension}`
+    `projects/${folder}/01_${folder}${fileExtension}`
   );
   let image;
   let error;
