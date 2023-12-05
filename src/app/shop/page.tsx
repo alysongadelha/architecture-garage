@@ -8,6 +8,7 @@ import { isPromise } from "@/utils";
 import MaintenanceDiv from "@/components/MaintenanceDiv";
 import { headers } from "next/headers";
 import { getProjects } from "@/services/getProjects";
+import CardSkeleton from "@/components/Skeleton/CardSkeleton";
 
 type Props = {};
 
@@ -16,7 +17,19 @@ const Shop = async (props: Props) => {
   const hostName = headersList.get("host") || "architecture-garage.vercel.app";
   const { result: projects, error } = await getProjects(hostName);
 
-  if (isPromise(projects)) return <p>Loading</p>;
+  if (isPromise(projects)) {
+    return (
+      <Container>
+        <Wrapper>
+          <CardContainer>
+            {[1, 2, 3].map((skeleton, index) => (
+              <CardSkeleton key={index} />
+            ))}
+          </CardContainer>
+        </Wrapper>
+      </Container>
+    );
+  }
 
   if (error !== null)
     return <Error error={error} reset={() => console.log("TO DO")} />;

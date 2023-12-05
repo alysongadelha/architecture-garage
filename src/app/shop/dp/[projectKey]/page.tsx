@@ -63,13 +63,14 @@ const ProjectDetailsPage = async ({ params }: Props) => {
       </Container>
       {/* ICONS */}
       {project.assets.length ? (
-        <section className="mt- mx-auto my-6 flex w-full flex-wrap justify-center bg-logoColor-surfaceMuted ">
+        <section className="mx-auto my-6 flex w-full select-none flex-wrap justify-center bg-logoColor-surfaceMuted">
           {project.assets.map((icon) => (
             <div
               key={icon.id}
               className="flex flex-col items-center p-2 text-center text-icon lg:mx-6"
             >
               <Image
+                className="undraggable"
                 width={45}
                 height={45}
                 src={iconImages[icon.alt]}
