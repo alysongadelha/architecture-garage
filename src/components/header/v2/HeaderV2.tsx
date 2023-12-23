@@ -44,14 +44,14 @@ export const HeaderV2 = (props: Props) => {
                   src={architectureGarageLogo}
                   alt={"alt"}
                   width={100}
-                  className="hidden md:block"
+                  className="undraggable hidden md:block"
                   priority={true}
                 />
                 <Image
                   src={architectureGarageLogoSmall}
                   alt={"alt"}
                   width={50}
-                  className="block md:hidden"
+                  className="undraggable block md:hidden"
                 />
               </Link>
               {/* Hamburger button for mobile */}
