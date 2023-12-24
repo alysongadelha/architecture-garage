@@ -17,6 +17,7 @@ import sqmtIcon from "@public/icons/square-meters.png";
 import gourmetArea from "@public/icons/gourmet-area.png";
 import Custom404 from "@/app/not-found";
 import Error from "@/app/error";
+import Heading from "@/components/form/Heading";
 
 interface Props {
   params: {
@@ -91,9 +92,11 @@ const ProjectDetailsPage = async ({ params }: Props) => {
       {project.longDescription.length ? (
         <Container marginTopDefinition={[10, 4, 4]} minimumScreenSize>
           <main className="flex flex-col gap-4 bg-logoColor-surfaceMuted p-2 px-10">
-            <h2 className="text-heading3 font-semibold uppercase">
-              Sobre o Projeto
-            </h2>
+            <Heading
+              tag="h3"
+              label="Sobre o Projeto"
+              className="text-heading3"
+            />
             <div className="lg:min-h-96 flex flex-col justify-center gap-6 ">
               {project.longDescription.map((paragraph) => (
                 <p key={paragraph} className="text-paragraph leading-loose">

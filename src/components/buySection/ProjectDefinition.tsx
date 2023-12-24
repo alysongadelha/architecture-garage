@@ -9,7 +9,7 @@ type Props = {
 
 const ProjectDefinition = ({ selectionAction, projectTypeOptions }: Props) => {
   return (
-    <div className="col-span-1 flex flex-col gap-10 lg:col-span-4">
+    <div className="col-span-1 flex flex-col gap-10 px-2 sm:py-2 lg:col-span-4">
       <div className="flex flex-col gap-3">
         <h5 className="text-heading5 font-bold">
           Defina que tipo de projeto deseja

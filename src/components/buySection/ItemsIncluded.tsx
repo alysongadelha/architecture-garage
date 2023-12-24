@@ -38,7 +38,7 @@ const bulletItemsDetails = [
 
 const ItemsIncluded = (props: Props) => {
   return (
-    <div className="col-span-1 flex flex-col gap-10 lg:col-span-4">
+    <div className="col-span-1 flex flex-col gap-10 px-2 sm:py-2 lg:col-span-4">
       <div className="flex flex-col gap-3">
         <h4 className="text-heading4 font-bold">O que esta incluído</h4>
         <div className="flex gap-6">
@@ -46,7 +46,7 @@ const ItemsIncluded = (props: Props) => {
             {bulletItems.map(({ id, name, insideItems }) => (
               <li
                 key={id}
-                className="ml-4 text-xs before:top-[1px] before:h-3 before:w-3"
+                className="ml-4 text-xs leading-5 before:top-[1px] before:h-3 before:w-3"
               >
                 {name}
                 {!!insideItems.length ? (
@@ -54,7 +54,7 @@ const ItemsIncluded = (props: Props) => {
                     {insideItems.map(({ id, name, insideItems }) => (
                       <li
                         key={id}
-                        className="ml-4 text-[9px] leading-3 before:top-[2px] before:h-2 before:w-2"
+                        className="ml-4 text-[9px] leading-4 before:top-[2px] before:h-2 before:w-2"
                       >
                         {name}
                       </li>
@@ -68,7 +68,7 @@ const ItemsIncluded = (props: Props) => {
             {bulletItemsDetails.map(({ id, name, insideItems }) => (
               <li
                 key={id}
-                className="ml-4 text-xs before:top-[1px] before:h-3 before:w-3"
+                className="ml-4 text-xs leading-5 before:top-[1px] before:h-3 before:w-3"
               >
                 {name}
                 {!!insideItems.length ? (

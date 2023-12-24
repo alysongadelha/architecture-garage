@@ -192,3 +192,55 @@ body {
   -webkit-user-select: none;
   -ms-user-select: none;
 }
+
+.effect:before {
+  content: "";
+  width: 14px;
+  height: 42px;
+  position: absolute;
+  background-color: #ff6f00;
+  z-index: -1;
+}
+
+.loading-bar {
+  width: 100%;
+  height: 2px;
+  /* position: absolute; */
+  top: 50%;
+  overflow: hidden;
+  background-color: #e5e7eb;
+}
+
+.loading-bar:before {
+  display: block;
+  /* position: absolute; */
+  content: "";
+  /* left: -200px; */
+  width: 200px;
+  height: 2px;
+  background-color: #ff6f00;
+  -webkit-animation: loading 2s linear infinite;
+  animation: loading 2s linear infinite;
+}
+
+@-webkit-keyframes loading {
+  from {
+    left: -200px;
+    width: 30%;
+  }
+  50% {
+    width: 30%;
+  }
+  70% {
+    width: 70%;
+  }
+  80% {
+    width: 50%;
+  }
+  95% {
+    width: 120%;
+  }
+  to {
+    width: 100%;
+  }
+}

@@ -16,13 +16,12 @@ module.exports = {
         arrowDown: "url('/icons/arrow-down.png')",
       },
       fontFamily: {
-        body: "var(--font-arimo)",
         heading: "var(--font-montserrat)",
         accent: "var(--font-playfair-display)",
       },
       fontSize: {
         heading1: "64px",
-        heading2: "36px",
+        heading2: "32px",
         heading3: "24px",
         heading4: "18px",
         heading5: "16px",
