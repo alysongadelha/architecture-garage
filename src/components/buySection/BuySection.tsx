@@ -13,7 +13,7 @@ type Props = {
   additionalOptions: AdditionalOptions;
 };
 
-const weDontOffer = [
+const weDoNotOffer = [
   "Planta de Locação (Deve ser providenciado localmente por um profissional habilitado);",
   "RRT - Registro de Responsabilidade técnica para Construção (Deve ser providenciado por um engenheiro que irá ser responsável por construir);",
   "Projeto de Estrutura (Deve ser providenciado localmente por um profissional habilitado);",
@@ -57,7 +57,7 @@ const BuySection = ({ projectTypes, additionalOptions }: Props) => {
         <div>
           <p>Os itens abaixo, não são fornecidos pela “AG”, </p>
           <ul className="bullet my-4">
-            {weDontOffer.map((offer, index) => (
+            {weDoNotOffer.map((offer, index) => (
               <li
                 key={index}
                 className="ml-4 before:top-[4px] before:h-3 before:w-3"

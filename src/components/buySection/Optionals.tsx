@@ -59,7 +59,7 @@ const Optionals = ({
   }
 
   return (
-    <div className="col-span-1 flex flex-col gap-10 pl-4 lg:col-span-4 lg:border-l-2 lg:border-black">
+    <div className="col-span-1 flex flex-col gap-10 px-2 sm:py-2 lg:col-span-4 lg:border-l-2 lg:border-black">
       <div className="flex flex-col gap-3">
         <h4 className="text-heading4 font-bold">Opcionais</h4>
         {/* Items */}
@@ -89,7 +89,7 @@ const Optionals = ({
         <h4 className="text-heading4 font-bold">O que não fornecemos</h4>
         <div className="flex justify-between">
           <span
-            className="cursor-pointer duration-300 hover:text-logoColor-brandAG"
+            className="cursor-pointer self-center font-accent duration-300 hover:text-accentColor"
             onClick={() => setModal()}
           >
             Leia mais &gt;&gt;

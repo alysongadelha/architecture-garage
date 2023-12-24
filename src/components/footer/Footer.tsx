@@ -25,12 +25,14 @@ const Footer = () => {
         </div>
         {Footerlinks.map((links) => (
           <div key={links.title} className=" my-3 text-gray-700">
-            <h3 className="text-heading3 font-bold">{links.title}</h3>
+            <h3 className="font-heading text-heading3 font-bold">
+              {links.title}
+            </h3>
             <ul>
               {links.links.map((item) => (
                 <li key={item.title} className="my-3">
                   <Link
-                    className=" text-heading5 font-semibold"
+                    className="text-heading5 font-thin duration-300 hover:text-accentColor"
                     href={item.url}
                   >
                     {item.title}
