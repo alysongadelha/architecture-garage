@@ -31,7 +31,7 @@ body {
 }
 
 .bullet li::before {
-  content: "";
+  content: '';
   position: absolute;
   border-radius: 15px;
   background-color: rgb(237, 155, 51);
@@ -146,7 +146,7 @@ body {
 }
 
 .name-check:before {
-  content: "";
+  content: '';
   float: left;
   position: absolute;
   top: 0;
@@ -159,7 +159,7 @@ body {
 }
 
 .name-check:after {
-  content: "";
+  content: '';
   position: absolute;
   top: 10px;
   left: 0;
@@ -194,7 +194,7 @@ body {
 }
 
 .effect:before {
-  content: "";
+  content: '';
   width: 14px;
   height: 42px;
   position: absolute;
@@ -214,7 +214,7 @@ body {
 .loading-bar:before {
   display: block;
   /* position: absolute; */
-  content: "";
+  content: '';
   /* left: -200px; */
   width: 200px;
   height: 2px;

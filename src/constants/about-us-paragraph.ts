@@ -1,6 +1,6 @@
 export const aboutUsInformation = [
   {
-    label: "Sobre nós",
+    label: 'Sobre nós',
     paragraphs: [
       `A Architecture Garage é uma empresa 100% digital e trabalha com
     projetos de arquitetura, focado em residências, planejando com
@@ -14,7 +14,7 @@ export const aboutUsInformation = [
     ],
   },
   {
-    label: "O Que Fazemos",
+    label: 'O Que Fazemos',
     paragraphs: [
       `A Loja de Projetos é uma empresa de arquitetura inovadora que
       oferece aos seus clientes a oportunidade de contratar projetos de
@@ -41,7 +41,7 @@ export const aboutUsInformation = [
     ],
   },
   {
-    label: "Missão",
+    label: 'Missão',
     paragraphs: [
       `Inovar a Forma de Oferecer Serviços de Arquitetura. A Loja de
       Projetos oferece aos seus clientes um produto, desenvolvido de
@@ -65,7 +65,7 @@ export const aboutUsInformation = [
     ],
   },
   {
-    label: "O Que Não Fazemos",
+    label: 'O Que Não Fazemos',
     paragraphs: [
       `Por oferecer um serviço realizado de forma 100% online, a Loja de
       Projetos não executa a obra e nem oferece o acompanhamento técnico
@@ -78,7 +78,7 @@ export const aboutUsInformation = [
     ],
   },
   {
-    label: "Quem Somos",
+    label: 'Quem Somos',
     paragraphs: [
       `A Loja de Projetos é um departamento da Hamilton Turola
       Arquitetura e Design (Turola & Turola Arquitetura Ltda - ME),
@@ -87,4 +87,4 @@ export const aboutUsInformation = [
       de prestar serviços de arquitetura.`,
     ],
   },
-];
+]

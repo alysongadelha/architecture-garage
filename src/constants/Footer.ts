@@ -1,12 +1,12 @@
-import { FooterOption } from "@/interfaces/HeaderAndFooter";
+import { FooterOption } from '@/interfaces/HeaderAndFooter'
 
 export const Footerlinks: FooterOption[] = [
   {
-    title: "Início",
+    title: 'Início',
     links: [
       {
-        title: "Projetos",
-        url: "/shop",
+        title: 'Projetos',
+        url: '/shop',
       },
     ],
   },
@@ -28,37 +28,37 @@ export const Footerlinks: FooterOption[] = [
   //     ],
   //   },
   {
-    title: "Sobre",
+    title: 'Sobre',
     links: [
       {
-        title: "Nossa Historia",
-        url: "/si/our-history",
+        title: 'Nossa Historia',
+        url: '/si/our-history',
       },
       {
-        title: "Preços",
-        url: "/custom/price",
+        title: 'Preços',
+        url: '/custom/price',
       },
       {
-        title: "FAQ",
-        url: "/si/common-questions",
+        title: 'FAQ',
+        url: '/si/common-questions',
       },
       {
-        title: "Contato",
-        url: "/si/contact",
+        title: 'Contato',
+        url: '/si/contact',
       },
     ],
   },
   {
-    title: "Políticas",
+    title: 'Políticas',
     links: [
       {
-        title: "Politica de Devolução",
-        url: "/custom/return-policy",
+        title: 'Politica de Devolução',
+        url: '/custom/return-policy',
       },
       {
-        title: "Politica de Envio",
-        url: "/custom/shipping-policy",
+        title: 'Politica de Envio',
+        url: '/custom/shipping-policy',
       },
     ],
   },
-];
+]

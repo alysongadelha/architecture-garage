@@ -1,9 +1,9 @@
-import MaintenanceDiv from "@/components/MaintenanceDiv";
+import MaintenanceDiv from '@/components/MaintenanceDiv'
 
-type Props = {};
+type Props = {}
 
 const Price = (props: Props) => {
-  return <MaintenanceDiv page="Preços" />;
-};
+  return <MaintenanceDiv page='Preços' />
+}
 
-export default Price;
+export default Price

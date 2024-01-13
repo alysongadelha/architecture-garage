@@ -1,19 +1,19 @@
 interface Props {
-  pageName: string;
+  pageName: string
 }
 
 const HeaderTextBox = ({ pageName }: Props) => (
-  <div className="grid grid-cols-6 items-center gap-4 text-center">
-    <div className="col-span-3">
-      <div className="mt-2">
-        <div className="">
-          <span className="relative inline-block before:absolute before:-inset-1 before:block before:-skew-y-3 before:bg-gray-500">
-            <h3 className="text-logoColor-neutralMutedAG relative">
+  <div className='grid grid-cols-6 items-center gap-4 text-center'>
+    <div className='col-span-3'>
+      <div className='mt-2'>
+        <div className=''>
+          <span className='relative inline-block before:absolute before:-inset-1 before:block before:-skew-y-3 before:bg-gray-500'>
+            <h3 className='relative text-logoColor-neutralMutedAG'>
               {pageName}
             </h3>
           </span>
         </div>
-        <span className="text-logoColor-neutralMutedAG">
+        <span className='text-logoColor-neutralMutedAG'>
           Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corporis
           fugit harum sapiente praesentium consequatur accusamus, adipisci
           voluptas illum dicta esse debitis, optio eius, nesciunt veniam odit
@@ -22,6 +22,6 @@ const HeaderTextBox = ({ pageName }: Props) => (
       </div>
     </div>
   </div>
-);
+)
 
-export default HeaderTextBox;
+export default HeaderTextBox

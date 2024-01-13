@@ -1,31 +1,31 @@
-import { Container } from "@/components/container/Container";
-import Image, { StaticImageData } from "next/image";
-import BuySection from "@/components/buySection/BuySection";
-import { getProjectDetails } from "@/services/getProjectDetails";
-import ImagesComponent from "@/components/detailsPage/ImagesComponent";
-import { headers } from "next/headers";
+import { Container } from '@/components/container/Container'
+import Image, { StaticImageData } from 'next/image'
+import BuySection from '@/components/buySection/BuySection'
+import { getProjectDetails } from '@/services/getProjectDetails'
+import ImagesComponent from '@/components/detailsPage/ImagesComponent'
+import { headers } from 'next/headers'
 
 // Icons
-import storiesIcon from "@public/icons/stories-m.png";
-import bedsIcon from "@public/icons/beds-m.png";
-import bathsIcon from "@public/icons/baths-m.png";
-import landSize from "@public/icons/land-size.png";
-import office from "@public/icons/office.png";
-import pool from "@public/icons/pool.png";
-import garage from "@public/icons/covered-garage.png";
-import sqmtIcon from "@public/icons/square-meters.png";
-import gourmetArea from "@public/icons/gourmet-area.png";
-import Custom404 from "@/app/not-found";
-import Error from "@/app/error";
-import Heading from "@/components/form/Heading";
+import storiesIcon from '@public/icons/stories-m.png'
+import bedsIcon from '@public/icons/beds-m.png'
+import bathsIcon from '@public/icons/baths-m.png'
+import landSize from '@public/icons/land-size.png'
+import office from '@public/icons/office.png'
+import pool from '@public/icons/pool.png'
+import garage from '@public/icons/covered-garage.png'
+import sqmtIcon from '@public/icons/square-meters.png'
+import gourmetArea from '@public/icons/gourmet-area.png'
+import Custom404 from '@/app/not-found'
+import Error from '@/app/error'
+import Heading from '@/components/form/Heading'
 
 interface Props {
   params: {
-    [key: string]: string;
-  };
+    [key: string]: string
+  }
 }
 
-type iconImages = { [key: string]: StaticImageData };
+type iconImages = { [key: string]: StaticImageData }
 
 const iconImages: iconImages = {
   landSize,
@@ -37,48 +37,48 @@ const iconImages: iconImages = {
   office,
   gourmetArea,
   pool,
-};
+}
 
 const ProjectDetailsPage = async ({ params }: Props) => {
-  const { projectKey } = params;
-  const headersList = headers();
-  const hostName = headersList.get("host") || "architecture-garage.vercel.app";
+  const { projectKey } = params
+  const headersList = headers()
+  const hostName = headersList.get('host') || 'architecture-garage.vercel.app'
 
   const { result: project, error } = await getProjectDetails(
     projectKey,
-    hostName
-  );
+    hostName,
+  )
 
-  if (error === undefined) return <Error error={error} reset={() => null} />;
-  if (project === null || !project.imageArray.length) return <Custom404 />;
+  if (error === undefined) return <Error error={error} reset={() => null} />
+  if (project === null || !project.imageArray.length) return <Custom404 />
 
   return (
     <>
       <Container minimumScreenSize>
-        <section className="flex flex-col">
-          <h1 className="text-heading3">
-            <span className=" text-logoColor-brandAG">#</span> {project.name}
+        <section className='flex flex-col'>
+          <h1 className='text-heading3'>
+            <span className=' text-logoColor-brandAG'>#</span> {project.name}
           </h1>
           <ImagesComponent projectImages={project.imageArray} />
         </section>
       </Container>
       {/* ICONS */}
       {project.assets.length ? (
-        <section className="mx-auto my-6 flex w-full select-none flex-wrap justify-center bg-logoColor-surfaceMuted">
+        <section className='mx-auto my-6 flex w-full select-none flex-wrap justify-center bg-logoColor-surfaceMuted'>
           {project.assets.map((icon) => (
             <div
               key={icon.id}
-              className="flex flex-col items-center p-2 text-center text-icon lg:mx-6"
+              className='flex flex-col items-center p-2 text-center text-icon lg:mx-6'
             >
               <Image
-                className="undraggable"
+                className='undraggable'
                 width={45}
                 height={45}
                 src={iconImages[icon.alt]}
                 alt={icon.alt}
               />
-              <p className="uppercase">{icon.iconName}</p>
-              <p className="text-sm font-bold uppercase">{icon.iconValue}</p>
+              <p className='uppercase'>{icon.iconName}</p>
+              <p className='text-sm font-bold uppercase'>{icon.iconValue}</p>
             </div>
           ))}
         </section>
@@ -91,15 +91,15 @@ const ProjectDetailsPage = async ({ params }: Props) => {
       {/* About the project */}
       {project.longDescription.length ? (
         <Container marginTopDefinition={[10, 4, 4]} minimumScreenSize>
-          <main className="flex flex-col gap-4 bg-logoColor-surfaceMuted p-2 px-10">
+          <main className='flex flex-col gap-4 bg-logoColor-surfaceMuted p-2 px-10'>
             <Heading
-              tag="h3"
-              label="Sobre o Projeto"
-              className="text-heading3"
+              tag='h3'
+              label='Sobre o Projeto'
+              className='text-heading3'
             />
-            <div className="lg:min-h-96 flex flex-col justify-center gap-6 ">
+            <div className='lg:min-h-96 flex flex-col justify-center gap-6 '>
               {project.longDescription.map((paragraph) => (
-                <p key={paragraph} className="text-paragraph leading-loose">
+                <p key={paragraph} className='text-paragraph leading-loose'>
                   {paragraph}
                 </p>
               ))}
@@ -108,7 +108,7 @@ const ProjectDetailsPage = async ({ params }: Props) => {
         </Container>
       ) : null}
     </>
-  );
-};
+  )
+}
 
-export default ProjectDetailsPage;
+export default ProjectDetailsPage

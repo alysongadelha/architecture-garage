@@ -1,5 +1,5 @@
-import { redirect } from "next/navigation";
+import { redirect } from 'next/navigation'
 
-const NoContent = () => redirect("/shop");
+const NoContent = () => redirect('/shop')
 
-export default NoContent;
+export default NoContent

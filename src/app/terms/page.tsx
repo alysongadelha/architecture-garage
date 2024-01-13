@@ -1,7 +1,7 @@
-import MaintenanceDiv from "@/components/MaintenanceDiv";
+import MaintenanceDiv from '@/components/MaintenanceDiv'
 
 const AboutUs = () => {
-  return <MaintenanceDiv page={"Terms of service"} />;
-};
+  return <MaintenanceDiv page={'Terms of service'} />
+}
 
-export default AboutUs;
+export default AboutUs

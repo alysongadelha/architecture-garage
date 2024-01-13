@@ -1,9 +1,9 @@
 export interface ISelect {
-  id: string;
-  options: ISelectOptions[];
+  id: string
+  options: ISelectOptions[]
 }
 
 export interface ISelectOptions {
-  value: string | number;
-  label: string;
+  value: string | number
+  label: string
 }

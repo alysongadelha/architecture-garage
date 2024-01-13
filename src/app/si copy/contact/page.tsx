@@ -1,9 +1,9 @@
-import MaintenanceDiv from "@/components/MaintenanceDiv";
+import MaintenanceDiv from '@/components/MaintenanceDiv'
 
-type Props = {};
+type Props = {}
 
 const Contact = (props: Props) => {
-  return <MaintenanceDiv page="Contato" />;
-};
+  return <MaintenanceDiv page='Contato' />
+}
 
-export default Contact;
+export default Contact

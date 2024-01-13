@@ -1,9 +1,9 @@
-import MaintenanceDiv from "@/components/MaintenanceDiv";
+import MaintenanceDiv from '@/components/MaintenanceDiv'
 
-type Props = {};
+type Props = {}
 
 const OurHistory = (props: Props) => {
-  return <MaintenanceDiv page="Nossa Historia" />;
-};
+  return <MaintenanceDiv page='Nossa Historia' />
+}
 
-export default OurHistory;
+export default OurHistory

@@ -10,8 +10,8 @@ const nextConfig = {
     styledComponents: true,
   },
   images: {
-    domains: ["picsum.photos", "firebasestorage.googleapis.com"],
+    domains: ['picsum.photos', 'firebasestorage.googleapis.com'],
   },
-};
+}
 
-module.exports = nextConfig;
+module.exports = nextConfig
