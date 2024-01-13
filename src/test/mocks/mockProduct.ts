@@ -1,5 +1,5 @@
 const mockFullProject = {
-  name: "Casa do Jose",
-  slug: "QncRXeePcLNIOlPMhAmc",
-  images: ["images"],
-};
+  name: 'Casa do Jose',
+  slug: 'QncRXeePcLNIOlPMhAmc',
+  images: ['images'],
+}

@@ -1,4 +1,4 @@
-import { isPromise } from "./Promise";
-import { getTotalValueFromOptions } from "./reducer";
+import { isPromise } from './Promise'
+import { getTotalValueFromOptions } from './reducer'
 
-export { isPromise, getTotalValueFromOptions };
+export { isPromise, getTotalValueFromOptions }

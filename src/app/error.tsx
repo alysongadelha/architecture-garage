@@ -1,22 +1,22 @@
-"use client";
-import MaintenanceDiv from "@/components/MaintenanceDiv";
-import { Container } from "@/components/container/Container";
-import { useRouter } from "next/navigation";
+'use client'
+import MaintenanceDiv from '@/components/MaintenanceDiv'
+import { Container } from '@/components/container/Container'
+import { useRouter } from 'next/navigation'
 
-import { useEffect } from "react";
+import { useEffect } from 'react'
 
 type Props = {
-  error: Error;
-  reset: () => void;
-};
+  error: Error
+  reset: () => void
+}
 
 const Error = ({ error, reset }: Props) => {
-  const { push } = useRouter();
+  const { push } = useRouter()
 
   useEffect(() => {
     // Log the error to an error reporting service
-    console.error(error);
-  }, [error]);
+    console.error(error)
+  }, [error])
 
   //   setTimeout(() => push("/"), 2000);
   return (
@@ -31,7 +31,7 @@ const Error = ({ error, reset }: Props) => {
         Try again
       </button>
     </Container>
-  );
-};
+  )
+}
 
-export default Error;
+export default Error
