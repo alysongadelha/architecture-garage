@@ -3,11 +3,11 @@ import Select from '../form/Select'
 import { ProjectTypes } from '@/interfaces/Project'
 
 type Props = {
-  selectionAction: (value: number) => void
+  onSelectAction: (value: number) => void
   projectTypeOptions: ProjectTypes
 }
 
-const ProjectDefinition = ({ selectionAction, projectTypeOptions }: Props) => {
+const ProjectDefinition = ({ onSelectAction, projectTypeOptions }: Props) => {
   return (
     <div className='col-span-1 flex flex-col gap-10 px-2 sm:py-2 lg:col-span-4'>
       <div className='flex flex-col gap-3'>
@@ -18,7 +18,7 @@ const ProjectDefinition = ({ selectionAction, projectTypeOptions }: Props) => {
           id='project-definition'
           options={projectTypeOptions}
           // @ts-ignore comment above the line of code that is causing the error
-          selectionAction={selectionAction}
+          onSelect={onSelectAction}
         />
       </div>
       <div className='flex flex-col gap-3'>

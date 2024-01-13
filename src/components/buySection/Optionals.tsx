@@ -2,7 +2,7 @@
 
 import { AdditionalOptions } from '@/interfaces/Project'
 import { getTotalValueFromOptions } from '@/utils'
-import { useState } from 'react'
+import { useRef, useState } from 'react'
 
 export interface OptionalItem {
   label: string

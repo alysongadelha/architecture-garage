@@ -1,27 +1,63 @@
+'use client'
 import { ISelectOptions } from '@/interfaces/FormComponents'
-import React from 'react'
+import { closeOnOutsideClick } from '@/utils'
+import { useEffect, useRef, useState } from 'react'
 
 type Props = {
   id: string
   options: ISelectOptions[]
-  selectionAction: (value: string | number) => void
+  onSelect: (value: string | number) => void
 }
 
-const Select = ({ id, options, selectionAction }: Props) => {
+const Select = ({ id, options, onSelect }: Props) => {
+  const [selectedOption, setSelectedOption] = useState<string | null>(null)
+  const [isOpen, setIsOpen] = useState(false)
+
+  const btnRef = useRef<HTMLUListElement>(null)
+
+  closeOnOutsideClick(btnRef, setIsOpen)
+
+  const handleSelect = (label: string, value: number | string) => {
+    setSelectedOption(label)
+    onSelect(value)
+    setIsOpen(false)
+  }
+
   return (
-    <select
-      className='max-w-[220px] bg-logoColor-brandAG bg-arrowDown bg-auto p-2 text-heading5 capitalize shadow-bot'
-      name={id}
+    <div
       id={id}
-      onChange={(e) => selectionAction(e.target.value)}
+      className='relative  max-w-[250px] bg-logoColor-brandAG text-heading5 capitalize shadow-bot'
     >
-      <option className='text-heading5' value='' label='Escolha aqui...' />
-      {options.map((option) => (
-        <option key={option.label} className='' value={option.value}>
-          {option.label}
-        </option>
-      ))}
-    </select>
+      <div
+        className={`flex cursor-pointer justify-between p-2 shadow-bot ${
+          isOpen && 'border-b-2 border-accentColor'
+        }`}
+        onClick={() => setIsOpen(!isOpen)}
+      >
+        <div>{selectedOption || 'Escolha aqui ...'}</div>
+        <div
+          className={`${
+            isOpen && 'rotate-180'
+          } w-5 bg-arrowDown bg-center bg-no-repeat duration-100`}
+        />
+      </div>
+      {isOpen ? (
+        <ul
+          ref={btnRef}
+          className='absolute w-full cursor-pointer bg-logoColor-brandAG '
+        >
+          {options.map(({ value, label }) => (
+            <li
+              className='p-2 hover:bg-logoColor-surfaceMuted hover:text-accentColor'
+              key={label}
+              onClick={() => handleSelect(label, value)}
+            >
+              {label}
+            </li>
+          ))}
+        </ul>
+      ) : null}
+    </div>
   )
 }
 

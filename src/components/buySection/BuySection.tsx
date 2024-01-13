@@ -1,12 +1,13 @@
 'use client'
 
-import { useState } from 'react'
+import { useRef, useState } from 'react'
 import ItemsIncluded from './ItemsIncluded'
 import Optionals from './Optionals'
 import ProjectDefinition from './ProjectDefinition'
 import SectionContainer from './SectionContainer'
 import Modal from '../Modal'
 import { AdditionalOptions, ProjectTypes } from '@/interfaces/Project'
+import { closeOnOutsideClick } from '@/utils'
 
 type Props = {
   projectTypes: ProjectTypes
@@ -28,10 +29,13 @@ const weDoNotOffer = [
 const BuySection = ({ projectTypes, additionalOptions }: Props) => {
   const [selectValue, setSelectValue] = useState<number>(0)
   const [isShowModal, setIsShowModal] = useState(false)
+  const modalRef = useRef<HTMLDivElement>(null)
 
   const handleSelectChange = (value: number) => {
     setSelectValue(value)
   }
+
+  closeOnOutsideClick(modalRef, setIsShowModal)
 
   return (
     <>
@@ -39,7 +43,7 @@ const BuySection = ({ projectTypes, additionalOptions }: Props) => {
         <div className='grid grid-cols-1 lg:grid-cols-12'>
           <ProjectDefinition
             projectTypeOptions={projectTypes}
-            selectionAction={handleSelectChange}
+            onSelectAction={handleSelectChange}
           />
           <ItemsIncluded />
           <Optionals
@@ -54,7 +58,7 @@ const BuySection = ({ projectTypes, additionalOptions }: Props) => {
         onRequestClose={() => setIsShowModal(false)}
         title='O que não fornecemos:'
       >
-        <div>
+        <div ref={modalRef}>
           <p>Os itens abaixo, não são fornecidos pela “AG”, </p>
           <ul className='bullet my-4'>
             {weDoNotOffer.map((offer, index) => (
