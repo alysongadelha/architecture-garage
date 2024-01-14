@@ -2,7 +2,7 @@ import './globals.css'
 import { Arimo, Montserrat, Playfair_Display } from 'next/font/google'
 import Footer from '@/components/footer/Footer'
 import { HeaderV2 } from '@/components/header/v2/HeaderV2'
-import { AppContextProvider } from '@/hooks/AppContext'
+import { NavbarContextProvider } from '@/hooks/NavbarContext'
 
 const montSerrat = Montserrat({
   subsets: ['latin'],
@@ -41,11 +41,11 @@ export default function RootLayout({
       <body
         className={`${arimo.className} ${montSerrat.variable} ${playfairDisplay.variable} font-body w-full gap-4 text-logoColor-neutralAG`}
       >
-        <AppContextProvider>
+        <NavbarContextProvider>
           <HeaderV2 />
           {children}
           <Footer />
-        </AppContextProvider>
+        </NavbarContextProvider>
       </body>
     </html>
   )

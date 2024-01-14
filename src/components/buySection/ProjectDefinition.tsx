@@ -1,5 +1,5 @@
 import React from 'react'
-import Select from '../form/Select'
+import Select, { SelectType } from '../form/Select'
 import { ProjectTypes } from '@/interfaces/Project'
 
 type Props = {
@@ -17,8 +17,7 @@ const ProjectDefinition = ({ onSelectAction, projectTypeOptions }: Props) => {
         <Select
           id='project-definition'
           options={projectTypeOptions}
-          // @ts-ignore comment above the line of code that is causing the error
-          onSelect={onSelectAction}
+          onSelect={onSelectAction as SelectType}
         />
       </div>
       <div className='flex flex-col gap-3'>

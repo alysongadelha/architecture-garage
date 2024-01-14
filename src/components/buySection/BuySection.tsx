@@ -1,41 +1,26 @@
 'use client'
 
 import { useRef, useState } from 'react'
+import dynamic from 'next/dynamic'
 import ItemsIncluded from './ItemsIncluded'
 import Optionals from './Optionals'
 import ProjectDefinition from './ProjectDefinition'
 import SectionContainer from './SectionContainer'
-import Modal from '../Modal'
 import { AdditionalOptions, ProjectTypes } from '@/interfaces/Project'
-import { closeOnOutsideClick } from '@/utils'
+import { weDoNotOffer } from '@/constants/we-do-no-offer'
+
+const Modal = dynamic(() => import('../Modal'), { ssr: false })
 
 type Props = {
   projectTypes: ProjectTypes
   additionalOptions: AdditionalOptions
 }
 
-const weDoNotOffer = [
-  'Planta de Locação (Deve ser providenciado localmente por um profissional habilitado);',
-  'RRT - Registro de Responsabilidade técnica para Construção (Deve ser providenciado por um engenheiro que irá ser responsável por construir);',
-  'Projeto de Estrutura (Deve ser providenciado localmente por um profissional habilitado);',
-  'Projeto Hidráulico (Deve ser providenciado localmente por um profissional habilitado);',
-  'Projeto Sanitário (Deve ser providenciado localmente por um profissional habilitado);',
-  'Projeto de Climatização (Deve ser providenciado localmente por um profissional habilitado);',
-  'Projeto Elétrico (Deve ser providenciado localmente por um profissional habilitado);',
-  'Projeto de Combate a incêndio (Deve ser providenciado localmente por um profissional habilitado);',
-  'Projeto de Rede lógica  e comunicação (Deve ser providenciado localmente por um profissional habilitado);',
-]
-
 const BuySection = ({ projectTypes, additionalOptions }: Props) => {
-  const [selectValue, setSelectValue] = useState<number>(0)
+  const [projectTypeSelectedValue, setProjectTypeSelectedValue] =
+    useState<number>(0)
   const [isShowModal, setIsShowModal] = useState(false)
   const modalRef = useRef<HTMLDivElement>(null)
-
-  const handleSelectChange = (value: number) => {
-    setSelectValue(value)
-  }
-
-  closeOnOutsideClick(modalRef, setIsShowModal)
 
   return (
     <>
@@ -43,13 +28,15 @@ const BuySection = ({ projectTypes, additionalOptions }: Props) => {
         <div className='grid grid-cols-1 lg:grid-cols-12'>
           <ProjectDefinition
             projectTypeOptions={projectTypes}
-            onSelectAction={handleSelectChange}
+            onSelectAction={(value: number) =>
+              setProjectTypeSelectedValue(value)
+            }
           />
           <ItemsIncluded />
           <Optionals
             additionalOptions={additionalOptions}
-            projectTypeValue={selectValue}
-            setModal={() => setIsShowModal((isShowModal) => !isShowModal)}
+            projectTypeValue={projectTypeSelectedValue}
+            setModal={() => setIsShowModal(true)}
           />
         </div>
       </SectionContainer>

@@ -1,5 +1,5 @@
 'use client'
-import { AppContext } from '@/hooks/AppContext'
+import { NavbarContext } from '@/hooks/NavbarContext'
 import React, { useContext } from 'react'
 
 interface Props {
@@ -15,7 +15,7 @@ export const Container = ({
   minimumScreenSize = false,
   marginTopDefinition,
 }: Props) => {
-  const { navbar } = useContext(AppContext)
+  const { navbar } = useContext(NavbarContext)
   const [marginSmall, marginMedium, marginLarge] = marginTopDefinition ?? [
     20, 36, 36,
   ]
