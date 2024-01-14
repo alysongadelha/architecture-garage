@@ -1,5 +1,7 @@
 'use client'
 
+import { useEffect, useMemo } from 'react'
+
 type ModalProps = {
   isShowModal: boolean
   onRequestClose: () => void
@@ -13,10 +15,20 @@ const Modal = ({
   children,
   title,
 }: ModalProps) => {
+  const htmlElement = useMemo(() => document.querySelector('html'), [])
+
+  if (htmlElement === null) return
+
+  useEffect(() => {
+    isShowModal
+      ? (htmlElement.style.overflowY = 'hidden')
+      : (htmlElement.style.overflowY = '')
+  }, [isShowModal])
+
   return isShowModal ? (
     <div className='fixed left-0 top-0 z-50 flex h-full w-full items-center justify-center overflow-hidden bg-logoColor-neutralMutedAG/40'>
       <div
-        className='w-3/4 rounded-lg bg-logoColor-surfaceMuted p-5'
+        className='h-5/6 w-3/4 overflow-y-scroll rounded-lg bg-logoColor-surfaceMuted p-5 md:h-fit'
         onClick={(e) => {
           e.stopPropagation()
         }}

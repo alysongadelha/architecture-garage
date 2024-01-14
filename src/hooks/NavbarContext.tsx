@@ -6,22 +6,22 @@ type Props = {
   children: React.ReactNode
 }
 
-type PropsContext = {
+type NavbarContext = {
   navbar: boolean
   setNavbar: (arg: boolean) => void
 }
 
-export const AppContext = createContext<PropsContext>({
+export const NavbarContext = createContext<NavbarContext>({
   navbar: false,
   setNavbar: () => null,
 })
 
-export const AppContextProvider = ({ children }: Props) => {
+export const NavbarContextProvider = ({ children }: Props) => {
   const [navbar, setNavbar] = useState(false)
 
   return (
-    <AppContext.Provider value={{ navbar, setNavbar }}>
+    <NavbarContext.Provider value={{ navbar, setNavbar }}>
       {children}
-    </AppContext.Provider>
+    </NavbarContext.Provider>
   )
 }

@@ -6,10 +6,10 @@ import Image from 'next/image'
 import footerLog from '@/assets/footerLogo.svg'
 import { medias } from '@/constants/FooterMedias'
 import { useContext } from 'react'
-import { AppContext } from '@/hooks/AppContext'
+import { NavbarContext } from '@/hooks/NavbarContext'
 
 const Footer = () => {
-  const { navbar } = useContext(AppContext)
+  const { navbar } = useContext(NavbarContext)
 
   if (navbar) return null
   return (

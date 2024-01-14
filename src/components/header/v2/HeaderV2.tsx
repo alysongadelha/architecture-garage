@@ -9,12 +9,12 @@ import hamburgerIcon from '@public/icons/hamburger-menu.svg'
 import { useContext } from 'react'
 import { NavLinks } from './NavLinks'
 import { usePathname } from 'next/navigation'
-import { AppContext } from '@/hooks/AppContext'
+import { NavbarContext } from '@/hooks/NavbarContext'
 
 type Props = {}
 
 export const HeaderV2 = (props: Props) => {
-  const { navbar, setNavbar } = useContext(AppContext)
+  const { navbar, setNavbar } = useContext(NavbarContext)
 
   let pageName: string
   switch (usePathname()) {

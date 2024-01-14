@@ -1,13 +1,13 @@
 'use client'
 import { useContext } from 'react'
-import { AppContext } from '@/hooks/AppContext'
+import { NavbarContext } from '@/hooks/NavbarContext'
 import { Container } from './container/Container'
 interface Props {
   page: string
 }
 
 const MaintenanceDiv = ({ page }: Props) => {
-  const { navbar } = useContext(AppContext)
+  const { navbar } = useContext(NavbarContext)
 
   if (navbar) return null
 

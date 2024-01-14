@@ -89,8 +89,8 @@ const Optionals = ({
         <h4 className='text-heading4 font-bold'>O que não fornecemos</h4>
         <div className='flex justify-between'>
           <span
-            className='cursor-pointer self-center font-accent duration-300 hover:text-accentColor'
-            onClick={() => setModal()}
+            className='cursor-pointer self-start font-accent duration-300 hover:text-accentColor'
+            onClick={setModal}
           >
             Leia mais &gt;&gt;
           </span>
