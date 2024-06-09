@@ -1,15 +1,13 @@
 'use client'
 
 import { useRef, useState } from 'react'
-import dynamic from 'next/dynamic'
 import ItemsIncluded from './ItemsIncluded'
 import Optionals from './Optionals'
 import ProjectDefinition from './ProjectDefinition'
 import SectionContainer from './SectionContainer'
 import { AdditionalOptions, ProjectTypes } from '@/interfaces/Project'
 import { weDoNotOffer } from '@/constants/we-do-no-offer'
-
-const Modal = dynamic(() => import('../Modal'), { ssr: false })
+import Modal from '../Modal'
 
 type Props = {
   projectTypes: ProjectTypes
@@ -46,7 +44,7 @@ const BuySection = ({ projectTypes, additionalOptions }: Props) => {
         title='O que não fornecemos:'
       >
         <div ref={modalRef}>
-          <p>Os itens abaixo, não são fornecidos pela “AG”, </p>
+          <p>Os itens abaixo, não são fornecidos pela “AG”:</p>
           <ul className='bullet my-4'>
             {weDoNotOffer.map((offer, index) => (
               <li

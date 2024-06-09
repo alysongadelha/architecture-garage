@@ -1,6 +1,6 @@
 'use client'
 
-import { useEffect, useMemo } from 'react'
+import { useEffect, useState } from 'react'
 
 type ModalProps = {
   isShowModal: boolean
@@ -15,15 +15,20 @@ const Modal = ({
   children,
   title,
 }: ModalProps) => {
-  const htmlElement = useMemo(() => document.querySelector('html'), [])
-
-  if (htmlElement === null) return
+  const [htmlElement, setHtmlElement] = useState<HTMLHtmlElement | null>(null)
 
   useEffect(() => {
+    setHtmlElement(document.querySelector('html'))
+  }, [])
+
+  useEffect(() => {
+    if (htmlElement === null) return
     isShowModal
       ? (htmlElement.style.overflowY = 'hidden')
       : (htmlElement.style.overflowY = '')
   }, [isShowModal])
+
+  if (htmlElement === null) return
 
   return isShowModal ? (
     <div className='fixed left-0 top-0 z-50 flex h-full w-full items-center justify-center overflow-hidden bg-logoColor-neutralMutedAG/40'>
