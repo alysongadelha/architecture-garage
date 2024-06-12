@@ -1,7 +1,5 @@
 import React from 'react'
 
-type Props = {}
-
 const bulletItems = [
   {
     id: 1,
@@ -36,7 +34,7 @@ const bulletItemsDetails = [
   { id: 8, name: 'Planta Humanizada', insideItems: [] },
 ]
 
-const ItemsIncluded = (props: Props) => {
+const ItemsIncluded = () => {
   return (
     <div className='col-span-1 flex flex-col gap-10 px-2 sm:py-2 lg:col-span-4'>
       <div className='flex flex-col gap-3'>
@@ -51,7 +49,7 @@ const ItemsIncluded = (props: Props) => {
                 {name}
                 {!!insideItems.length ? (
                   <ul>
-                    {insideItems.map(({ id, name, insideItems }) => (
+                    {insideItems.map(({ id, name }) => (
                       <li
                         key={id}
                         className='ml-4 text-[9px] leading-4 before:top-[2px] before:h-2 before:w-2'
@@ -73,7 +71,7 @@ const ItemsIncluded = (props: Props) => {
                 {name}
                 {!!insideItems.length ? (
                   <ul>
-                    {insideItems.map(({ id, name, insideItems }) => (
+                    {insideItems.map(({ id, name }) => (
                       <li
                         key={id}
                         className='ml-4 text-sm before:top-[5px] before:h-2 before:w-2'

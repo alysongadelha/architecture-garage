@@ -11,9 +11,7 @@ import { NavLinks } from './NavLinks'
 import { usePathname } from 'next/navigation'
 import { NavbarContext } from '@/hooks/NavbarContext'
 
-type Props = {}
-
-export const HeaderV2 = (props: Props) => {
+export const HeaderV2 = () => {
   const { navbar, setNavbar } = useContext(NavbarContext)
 
   let pageName: string

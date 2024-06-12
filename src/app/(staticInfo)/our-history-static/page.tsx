@@ -1,8 +1,6 @@
 import MaintenanceDiv from '@/components/MaintenanceDiv'
 
-type Props = {}
-
-const OurHistory = (props: Props) => {
+const OurHistory = () => {
   return <MaintenanceDiv page='Nossa Historia' />
 }
 

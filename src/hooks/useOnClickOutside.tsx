@@ -7,6 +7,7 @@ export const useOnClickOutside = (
 ) => {
   const [isOpen, setIsOpen] = useState(initialState)
   useEffect(() => {
+    // eslint-disable-next-line
     const hideElement = (e: any) => {
       if (elementRef.current && !elementRef.current?.contains(e.target)) {
         setIsOpen(!isOpen)

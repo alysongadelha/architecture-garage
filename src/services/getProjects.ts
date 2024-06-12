@@ -8,7 +8,7 @@ export const getProjects = async (basePath: string) => {
     cache: 'no-store',
   })
 
-  const { result, error }: { result: ProjectsData[]; error: any } =
+  const { result, error }: { result: ProjectsData[]; error: string } =
     await fetchProject.json()
 
   return { result, error }

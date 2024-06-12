@@ -21,7 +21,7 @@ const ImagesComponent = ({ projectImages }: Props) => {
         <Image
           className='undraggable'
           src={selectedImage}
-          onLoad={(e) => setIsDefaultIsImageLoaded(true)}
+          onLoad={() => setIsDefaultIsImageLoaded(true)}
           alt='selected-image'
           fill={true}
           priority

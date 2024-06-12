@@ -12,7 +12,7 @@ export const getProjectDetails = async (
     },
   )
 
-  const { result, error }: { result: ProjectFullData; error: any } =
+  const { result, error }: { result: ProjectFullData; error: unknown } =
     await fetchProject.json()
 
   return { result, error }

@@ -11,31 +11,31 @@ import { getDefaultImage, getImageList } from './getBucket'
 
 const db = getFirestore(firebase_app)
 export async function getDocument(collection: string, id: string) {
-  let docRef = doc(db, collection, id)
+  const docRef = doc(db, collection, id)
   let result = null
-  let error = null
+  let responseError = null
 
   try {
     const response = (await getDoc(docRef)).data() as ProjectData
     const { imageArray } = await getImageList(response.imageCluster)
     result = { ...response, imageArray }
   } catch (error) {
-    error = error
+    responseError = error
   }
 
-  return { result, error }
+  return { result, responseError }
 }
 
 export async function getCollection(collection: string) {
-  let CollectionRef = collectionGroup(db, collection)
+  const collectionRef = collectionGroup(db, collection)
   let result = null
-  let error = null
+  let responseError = null
 
   try {
-    const response = await getDocs(CollectionRef)
+    const response = await getDocs(collectionRef)
     const projectsData = response.docs.map((doc) => doc.data() as ProjectsData)
     const projectsDataFull = projectsData.map(async (project) => {
-      const { image, error } = await getDefaultImage(project.image, '.jpg')
+      const { image } = await getDefaultImage(project.image, '.jpg')
       return {
         ...project,
         image,
@@ -43,8 +43,8 @@ export async function getCollection(collection: string) {
     })
     result = await Promise.all(projectsDataFull)
   } catch (error) {
-    error = error
+    responseError = error
   }
 
-  return { result, error }
+  return { result, responseError }
 }

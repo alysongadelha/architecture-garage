@@ -1,5 +1,4 @@
 'use client'
-import MaintenanceDiv from '@/components/MaintenanceDiv'
 import { Container } from '@/components/container/Container'
 import { useRouter } from 'next/navigation'
 
@@ -18,7 +17,7 @@ const Error = ({ error, reset }: Props) => {
     console.error(error)
   }, [error])
 
-  //   setTimeout(() => push("/"), 2000);
+  setTimeout(() => push('/'), 3000)
   return (
     <Container>
       <h2>Something went wrong!</h2>

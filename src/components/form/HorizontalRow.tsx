@@ -1,8 +1,6 @@
 import React from 'react'
 
-type Props = {}
-
-const HorizontalRow = (props: Props) => {
+const HorizontalRow = () => {
   return <div className='loading-bar' />
 }
 

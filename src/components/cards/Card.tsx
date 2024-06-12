@@ -49,7 +49,7 @@ const Card = ({ project }: Props) => {
             src={image || imageNotFound}
             fill={true}
             alt='house-image'
-            onLoad={(e) => setIsImageLoaded(true)}
+            onLoad={() => setIsImageLoaded(true)}
             sizes='33vw'
           />
         </div>

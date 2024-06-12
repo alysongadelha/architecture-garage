@@ -1,9 +1,9 @@
-type Props = { children: React.ReactNode }
+type WrapperProps = { children: React.ReactNode }
 
-const Wrapper = (props: Props) => {
+const Wrapper = ({ children }: WrapperProps) => {
   return (
     <main className='container mx-auto flex w-10/12 flex-col items-center'>
-      {props.children}
+      {children}
     </main>
   )
 }

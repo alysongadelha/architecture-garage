@@ -9,6 +9,9 @@ export async function GET(
 
   if (!projectKey) throw new Error('Invalid ID')
 
-  const { result, error } = await getDocument('projectDetail', projectKey)
+  const { result, responseError: error } = await getDocument(
+    'projectDetail',
+    projectKey,
+  )
   return NextResponse.json({ result, error })
 }
