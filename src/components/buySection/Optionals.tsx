@@ -2,7 +2,7 @@
 
 import { AdditionalOptions } from '@/interfaces/Project'
 import { getTotalValueFromOptions } from '@/utils'
-import { useRef, useState } from 'react'
+import { useState } from 'react'
 
 export interface OptionalItem {
   label: string
@@ -14,20 +14,6 @@ type Props = {
   projectTypeValue: number
   setModal: () => void
 }
-
-const Items: OptionalItem[] = [
-  {
-    label: 'Imagens para Divulgação',
-    value: 1000,
-  },
-  { label: 'Projeto Luminotécnicos', value: 2000 },
-  { label: 'Projeto de Interiores', value: 4200 },
-  { label: 'Projeto de Mobiliários', value: 2999.9 },
-  {
-    label: 'RRT (Registro de Resp. Técnica) somente do projeto',
-    value: 300,
-  },
-]
 
 const Optionals = ({
   projectTypeValue,

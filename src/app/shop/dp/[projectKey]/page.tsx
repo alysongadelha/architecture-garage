@@ -16,8 +16,8 @@ import garage from '@public/icons/covered-garage.png'
 import sqmtIcon from '@public/icons/square-meters.png'
 import gourmetArea from '@public/icons/gourmet-area.png'
 import Custom404 from '@/app/not-found'
-import Error from '@/app/error'
 import Heading from '@/components/form/Heading'
+import { redirect } from 'next/navigation'
 
 interface Props {
   params: {
@@ -49,7 +49,10 @@ const ProjectDetailsPage = async ({ params }: Props) => {
     hostName,
   )
 
-  if (error === undefined) return <Error error={error} reset={() => null} />
+  if (error) {
+    redirect('/shop')
+  }
+
   if (project === null || !project.imageArray.length) return <Custom404 />
 
   return (

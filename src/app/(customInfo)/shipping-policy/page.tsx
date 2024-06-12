@@ -1,8 +1,6 @@
 import { Container } from '@/components/container/Container'
 
-type Props = {}
-
-const ShippingPolicy = (props: Props) => {
+const ShippingPolicy = () => {
   return (
     <Container>
       <div className='flex w-full flex-col gap-5 py-10'>

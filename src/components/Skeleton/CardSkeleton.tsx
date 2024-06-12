@@ -1,8 +1,6 @@
 import React from 'react'
 
-type Props = {}
-
-const CardSkeleton = (props: Props) => {
+const CardSkeleton = () => {
   return (
     <div className='absolute z-20 h-[330px] w-[270px] animate-pulse cursor-wait'>
       {/* Image*/}

@@ -1,9 +1,6 @@
-import MaintenanceDiv from '@/components/MaintenanceDiv'
 import { Container } from '@/components/container/Container'
 
-type Props = {}
-
-const ReturnPolicy = (props: Props) => {
+const ReturnPolicy = () => {
   return (
     <Container>
       <div className='flex w-full flex-col gap-5 py-10'>

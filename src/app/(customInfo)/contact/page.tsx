@@ -1,8 +1,6 @@
 import MaintenanceDiv from '@/components/MaintenanceDiv'
 
-type Props = {}
-
-const Contact = (props: Props) => {
+const Contact = () => {
   return <MaintenanceDiv page='Contato' />
 }
 

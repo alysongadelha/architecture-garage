@@ -26,7 +26,7 @@ const Modal = ({
     isShowModal
       ? (htmlElement.style.overflowY = 'hidden')
       : (htmlElement.style.overflowY = '')
-  }, [isShowModal])
+  }, [isShowModal, htmlElement])
 
   if (htmlElement === null) return
 

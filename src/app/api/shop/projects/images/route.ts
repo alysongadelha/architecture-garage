@@ -7,7 +7,7 @@ import image06 from '@public/mockProjectImages/020_60c908ad64.jpg'
 import image07 from '@public/mockProjectImages/021_de3a5ba1e8.jpg'
 import image08 from '@public/mockProjectImages/022_0dfe46eaee.jpg'
 
-export async function GET(request: Request) {
+export async function GET() {
   const images = [
     image01,
     image02,

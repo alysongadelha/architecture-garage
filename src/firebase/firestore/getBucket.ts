@@ -26,7 +26,7 @@ export const getDefaultImage = async (
 
 export const getImageList = async (folder: string) => {
   const listRef = ref(storage, `projects/${folder}`)
-  let imageArray: Array<any> = []
+  let imageArray: Array<string> = []
   let error
   try {
     const response = await listAll(listRef)
