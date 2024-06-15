@@ -12,6 +12,9 @@ const nextConfig = {
   images: {
     domains: ['picsum.photos', 'firebasestorage.googleapis.com'],
   },
+  experimental: {
+    serverActions: true,
+  },
 }
 
 module.exports = nextConfig
