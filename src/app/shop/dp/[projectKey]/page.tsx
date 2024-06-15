@@ -1,9 +1,8 @@
 import { Container } from '@/components/container/Container'
 import Image, { StaticImageData } from 'next/image'
 import BuySection from '@/components/buySection/BuySection'
-import { getProjectDetails } from '@/services/getProjectDetails'
+import { getProjectDetailsAction } from '@/actions/getProjectDetails'
 import ImagesComponent from '@/components/detailsPage/ImagesComponent'
-import { headers } from 'next/headers'
 
 // Icons
 import storiesIcon from '@public/icons/stories-m.png'
@@ -15,9 +14,8 @@ import pool from '@public/icons/pool.png'
 import garage from '@public/icons/covered-garage.png'
 import sqmtIcon from '@public/icons/square-meters.png'
 import gourmetArea from '@public/icons/gourmet-area.png'
-import Custom404 from '@/app/not-found'
 import Heading from '@/components/form/Heading'
-import { redirect } from 'next/navigation'
+import { getProjectsAction } from '@/actions/getProjects'
 
 interface Props {
   params: {
@@ -39,21 +37,18 @@ const iconImages: iconImages = {
   pool,
 }
 
+export async function generateStaticParams() {
+  const projects = await getProjectsAction()
+
+  return projects?.map((project) => {
+    projectKey: project.id
+  })
+}
+
 const ProjectDetailsPage = async ({ params }: Props) => {
   const { projectKey } = params
-  const headersList = headers()
-  const hostName = headersList.get('host') || 'architecture-garage.vercel.app'
 
-  const { result: project, error } = await getProjectDetails(
-    projectKey,
-    hostName,
-  )
-
-  if (error) {
-    redirect('/shop')
-  }
-
-  if (project === null || !project.imageArray.length) return <Custom404 />
+  const project = await getProjectDetailsAction(projectKey)
 
   return (
     <>

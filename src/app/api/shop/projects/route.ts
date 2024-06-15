@@ -4,6 +4,6 @@ import { NextResponse } from 'next/server'
 export const revalidate = 60
 
 export async function GET() {
-  const { result, responseError } = await getCollection('projects')
-  return NextResponse.json({ result, responseError })
+  const { projects, error } = await getCollection('projects')
+  return NextResponse.json({ projects, error })
 }
