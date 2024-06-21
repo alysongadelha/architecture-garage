@@ -1,6 +1,6 @@
 'use client'
 import { Container } from '@/components/container/Container'
-import React, { useEffect, useState } from 'react'
+import React, { useState } from 'react'
 
 type loginResponse = {
   authorized: boolean
@@ -14,16 +14,6 @@ type perfilResponse = {
 }
 
 const LoginPage = () => {
-  useEffect(() => {
-    const isLoginEnabled = window.localStorage.getItem('loginEnable')
-    if (!isLoginEnabled) {
-      window.location.href = '/'
-      return
-    }
-    setLoginEnabled(isLoginEnabled)
-  }, [])
-
-  const [loginEnabled, setLoginEnabled] = useState<string | null>('')
   const [username, setUsername] = useState('')
   const [password, setPassword] = useState('')
   const [user, setUser] = useState('')
@@ -46,10 +36,6 @@ const LoginPage = () => {
       setUser(data.data?.usuario)
       return
     }
-  }
-
-  if (!loginEnabled) {
-    return null
   }
 
   return (
