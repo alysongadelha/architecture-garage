@@ -1,9 +1,7 @@
-'use client'
 import MaintenanceDiv from '@/components/MaintenanceDiv'
-import { useRouter } from 'next/navigation'
+import { redirect } from 'next/navigation'
 
-export default function Custom404() {
-  const { push } = useRouter()
-  setTimeout(() => push('/'), 2000)
+export default async function Custom404() {
+  setTimeout(() => redirect('/'), 2000)
   return <MaintenanceDiv page={'CUSTOM 404'} />
 }
